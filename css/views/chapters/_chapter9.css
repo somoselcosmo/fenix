@@ -1,0 +1,133 @@
+/* --- CAPÍTULO 9: REPROGRAMACIÓN --- */
+
+/* Zona de Confort */
+.comfort-zone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.comfort-zone {
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border: 4px solid var(--text-secondary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.1s;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.comfort-zone:active { transform: scale(0.95); }
+
+.comfort-zone.breaking {
+    border-color: var(--accent);
+    color: var(--accent);
+    animation: shake-hard 0.2s;
+}
+
+.comfort-zone.broken {
+    border-color: transparent;
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+}
+
+.comfort-zone.broken::after {
+    content: 'LIBERTAD';
+    font-size: 1.5rem;
+}
+.comfort-zone.broken span { display: none; }
+
+/* Switches de las 4 D's */
+.switches-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.switch-card {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.switch-card.active {
+    border-color: var(--accent);
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.switch-info h4 { margin: 0; color: #fff; font-size: 1rem; }
+.switch-info p { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
+
+/* Toggle Customizado */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    flex-shrink: 0;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #334155;
+    transition: .4s;
+    border-radius: 34px;
+}
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .toggle-slider { background-color: var(--accent); }
+input:checked + .toggle-slider:before { transform: translateX(26px); }
+input:disabled + .toggle-slider { background-color: #1e293b; cursor: not-allowed; opacity: 0.5; }
+
+/* Terminal 21 Días */
+.script-terminal {
+    background: #000;
+    border: 1px solid #333;
+    padding: 2rem;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+}
+
+.terminal-line { color: #00ff00; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.terminal-line.success { color: var(--accent); font-weight: bold; margin-top: 1rem; }
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #00ff00;
+    color: #fff;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    outline: none;
+}

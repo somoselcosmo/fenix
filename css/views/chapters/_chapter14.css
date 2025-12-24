@@ -1,0 +1,129 @@
+/* --- CAPÍTULO 14: SUGESTOPEDIA --- */
+
+/* Meditación */
+.meditation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #0f172a;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.breath-circle {
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.2);
+    border: 2px solid #3b82f6;
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 2rem;
+    transition: all 4s ease-in-out; /* Clave para la respiración */
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.breath-circle.inhale {
+    transform: scale(1.5);
+    background: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.5);
+}
+
+.breath-circle.exhale {
+    transform: scale(1);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+#breath-text { font-weight: bold; letter-spacing: 2px; }
+
+/* Estudio de Grabación */
+.studio-console {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #444;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+}
+
+.console-input {
+    background: #000; border: 1px solid #555; color: #fff;
+    padding: 1rem; width: 100%; font-family: monospace; font-size: 1.1rem;
+}
+
+.arrow-down { text-align: center; color: var(--text-secondary); margin: 1rem 0; font-size: 0.8rem; }
+
+.console-screen {
+    background: #0a2a1a; /* Verde retro */
+    color: #22c55e;
+    font-family: monospace;
+    padding: 1rem;
+    border: 2px solid #114422;
+    border-radius: 6px;
+    min-height: 3rem;
+    text-shadow: 0 0 5px #22c55e;
+}
+
+.btn-record {
+    width: 100%; margin-top: 1.5rem;
+    background: #ef4444; color: white; border: none;
+    padding: 1rem; border-radius: 50px; font-weight: bold;
+    cursor: pointer; transition: 0.2s;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+.btn-record:hover { transform: scale(1.02); }
+.btn-record:active { transform: scale(0.95); }
+
+/* Cassette Player */
+.cassette-player {
+    background: #2d2d2d;
+    padding: 2rem; border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center;
+    border: 1px solid #444;
+}
+
+.cassette {
+    width: 250px; height: 150px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+}
+
+.tape-label {
+    position: absolute; top: 10px; width: 80%; height: 60px;
+    background: #fca5a5;
+    text-align: center; padding-top: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold; color: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.reel {
+    width: 40px; height: 40px;
+    background: #fff; border-radius: 50%;
+    border: 5px solid #333;
+    position: absolute; bottom: 30px;
+    background-image: radial-gradient(#333 30%, transparent 31%), repeating-conic-gradient(#fff 0 10deg, #ccc 10deg 20deg);
+}
+.reel.left { left: 40px; }
+.reel.right { right: 40px; }
+
+.cassette.playing .reel { animation: spin-reel 2s linear infinite; }
+@keyframes spin-reel { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Ondas musicales */
+.music-waves {
+    display: flex; gap: 5px; height: 30px; align-items: flex-end;
+}
+.bar {
+    width: 5px; background: var(--accent);
+    animation: wave-eq 0.5s ease-in-out infinite alternate;
+}
+.bar:nth-child(2) { animation-delay: 0.1s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.3s; }
+.bar:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave-eq { 0% { height: 5px; } 100% { height: 30px; } }

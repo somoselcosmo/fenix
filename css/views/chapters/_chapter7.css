@@ -1,0 +1,140 @@
+/* --- CAPÍTULO 7: LIBERANDO FRENOS --- */
+
+/* Síntomas */
+.symptoms-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.symptom-btn {
+    background: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.symptom-btn.selected {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+/* La Mazmorra de Cadenas */
+.chains-dungeon {
+    margin-top: 4rem;
+    position: relative;
+    text-align: center;
+}
+
+.chains-container {
+    display: flex;
+    justify-content: center; /* Centrar las cadenas */
+    gap: 1.5rem; /* Espacio entre cadenas */
+    min-height: 400px;
+    position: relative;
+    margin-top: 2rem;
+    perspective: 1000px;
+}
+
+/* La Puerta de la Libertad (Fondo) */
+.freedom-door {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    border: 10px solid #334155;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.freedom-door span {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 2;
+}
+
+.light-glow {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, #ffffff 0%, #3b82f6 50%, #000000 90%);
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+/* Estado de Libertad Activada */
+.chains-container.unlocked .freedom-door { border-color: #fff; box-shadow: 0 0 50px rgba(255,255,255,0.5); }
+.chains-container.unlocked .light-glow { opacity: 1; }
+.chains-container.unlocked span { opacity: 1; letter-spacing: 5px; }
+
+/* Las Cadenas */
+.chain-lock {
+    position: relative; /* Ya no absolute */
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: 80px; /* Ancho fijo para cada cadena */
+}
+
+.chain-lock:hover { transform: translateY(-5px); }
+
+.chain-link {
+    width: 20px; height: 40px;
+    border: 6px solid #57534e; /* Color óxido */
+    border-radius: 20px;
+    margin-bottom: -10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.chain-lock-body {
+    background: #292524;
+    border: 2px solid #57534e;
+    padding: 1.5rem 0.5rem;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    margin: -5px 0;
+    z-index: 2;
+}
+
+.chain-lock-body .icon { font-size: 2rem; }
+.chain-lock-body span { font-size: 0.7rem; font-weight: bold; color: #a8a29e; }
+
+/* Cadena Rota */
+.chain-lock.broken {
+    animation: chain-break 1s forwards;
+    pointer-events: none;
+}
+
+@keyframes chain-break {
+    0% { transform: translateY(0); opacity: 1; }
+    20% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(100px) rotate(-20deg); opacity: 0; }
+}
+
+/* Modal específico */
+.dungeon-modal {
+    border-color: #ef4444;
+    box-shadow: 0 0 50px rgba(239, 68, 68, 0.2);
+}
+.text-center { text-align: center; }

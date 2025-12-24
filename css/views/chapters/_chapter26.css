@@ -1,0 +1,156 @@
+/* --- CAPÍTULO 26: SUPER NIÑOS --- */
+
+/* Sistema de Defensa */
+.defense-system {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    position: relative;
+    height: 300px;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #334155;
+}
+
+.child-core {
+    position: absolute;
+    bottom: 20px;
+    width: 80px; height: 80px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 3rem;
+    z-index: 10;
+}
+
+.shield {
+    position: absolute;
+    top: -20px; left: -20px; right: -20px; bottom: -20px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.shield.active {
+    border-color: #3b82f6; /* Azul protector */
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), inset 0 0 20px rgba(59, 130, 246, 0.2);
+    opacity: 1;
+    animation: shield-pulse 2s infinite;
+}
+
+@keyframes shield-pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+/* Amenazas (Críticas) */
+.threat-zone {
+    width: 100%; height: 100%;
+    position: relative;
+}
+
+.threat {
+    position: absolute;
+    top: -50px;
+    background: #ef4444;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    animation: attack-core 3s infinite linear;
+}
+
+#threat-1 { left: 20%; animation-delay: 0s; }
+#threat-2 { left: 50%; animation-delay: 1s; }
+#threat-3 { left: 80%; animation-delay: 2s; }
+
+/* Animación de ataque: Baja hacia el niño */
+@keyframes attack-core {
+    0% { top: -50px; opacity: 1; }
+    80% { opacity: 1; }
+    90% { opacity: 0; transform: scale(1.5); } /* Impacto */
+    100% { top: 250px; opacity: 0; }
+}
+
+/* Cuando el escudo está activo, las amenazas rebotan */
+.defense-system.protected .threat {
+    animation: bounce-off 3s infinite linear;
+}
+
+/* Las amenazas rebotan antes de llegar */
+@keyframes bounce-off {
+    0% { top: -50px; opacity: 1; }
+    50% { top: 150px; opacity: 1; } /* Choca con escudo */
+    100% { top: -100px; opacity: 0; transform: rotate(45deg); } /* Rebote */
+}
+
+.shield-controls {
+    position: absolute;
+    bottom: 20px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Nutrición */
+.nutrient-mixer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: center;
+}
+
+@media (max-width: 600px) { .nutrient-mixer { grid-template-columns: 1fr; } }
+
+.growth-display {
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.tree-growth { font-size: 2rem; transition: transform 0.5s; display: inline-block; }
+
+.growth-bar-bg {
+    width: 100%; height: 10px; background: #000; border-radius: 5px; margin-top: 1rem; overflow: hidden;
+}
+.growth-bar-fill {
+    height: 100%; width: 0%; background: #22c55e; transition: width 0.3s;
+}
+
+.nutrients-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.nutrient-btn {
+    background: #1e293b;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.1s;
+    font-size: 0.8rem;
+}
+
+.nutrient-btn:active { transform: scale(0.95); background: #22c55e; color: #fff; }
+
+/* Perdón */
+.apology-script {
+    background: #fff;
+    color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 4px;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.script-line { margin-bottom: 1.5rem; font-size: 1.1rem; border-bottom: 1px dashed #ccc; padding-bottom: 0.5rem; }

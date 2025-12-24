@@ -1,0 +1,196 @@
+/* --- CAPÍTULO 6: EL ÁRBOL NEGATIVO (V2 - High Fidelity) --- */
+
+.quote-card-dark {
+    background: #0f172a;
+    border-left: 4px solid #ef4444;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.quote-card-dark blockquote { color: #e2e8f0; font-size: 1.2rem; margin-bottom: 1rem; font-style: italic; }
+.quote-card-dark cite { color: #ef4444; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+
+/* El Escenario */
+.tree-section {
+    background: linear-gradient(180deg, #1e293b 0%, #020617 100%);
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 3rem 1rem;
+    overflow: hidden;
+}
+
+/* Barra de Vida */
+.tree-status-bar { 
+    max-width: 400px; 
+    margin: 0 auto 3rem auto; 
+    text-align: left; 
+}
+.tree-status-bar span { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+.health-bar-bg { width: 100%; height: 8px; background: #334155; border-radius: 4px; margin-top: 8px; overflow: hidden; }
+.health-bar-fill { width: 100%; height: 100%; background: #ef4444; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px #ef4444; }
+
+/* --- EL ARTE DEL ÁRBOL (CSS PURE) --- */
+.tree-visual-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.negative-tree {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.1s, filter 0.5s;
+}
+
+/* La Copa del Árbol (Masa Oscura) */
+.tree-foliage { 
+    font-size: 3rem; /* Emojis más pequeños dentro de la masa */
+    background: #1a202c; /* Gris muy oscuro */
+    width: 220px;
+    height: 180px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Forma orgánica */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);
+    border-bottom: 5px solid #2d3748;
+    z-index: 2;
+    position: relative;
+}
+
+/* El Tronco */
+.tree-trunk { 
+    width: 60px; height: 120px; 
+    background: linear-gradient(90deg, #3f2e26, #5d4037, #3f2e26);
+    margin: -20px auto 0 auto; /* Subir para que entre en la copa */
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Las Raíces (Visuales) */
+.roots-system {
+    display: flex;
+    gap: 4rem; /* Separar más los botones */
+    justify-content: center;
+    margin-top: 0; 
+    position: relative;
+    z-index: 10;
+}
+
+/* Líneas conectoras (Ramas de raíz) */
+.root-control { 
+    position: relative; 
+    padding-top: 40px; /* Espacio para la línea */
+}
+
+/* Dibujamos la línea que conecta el botón con el tronco */
+.root-control::before {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background: #5d4037; /* Color raíz */
+    transform-origin: bottom center;
+}
+
+/* Inclinamos las líneas hacia el centro */
+.root-control:first-child::before { transform: rotate(30deg) translateX(12px); }
+.root-control:last-child::before { transform: rotate(-30deg) translateX(-12px); }
+
+/* Estilo de los Botones de Raíz */
+.root-btn {
+    background: #0f172a;
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+    position: relative;
+    z-index: 20;
+}
+
+.root-btn:hover { background: #ef4444; color: white; transform: scale(1.05); }
+
+/* Estado Cortado (Raíz Muerta) */
+.root-btn.cut {
+    border-color: #475569;
+    color: #475569;
+    background: #1e293b;
+    box-shadow: none;
+    text-decoration: line-through;
+    transform: scale(0.95);
+}
+
+/* Cuando se corta, la línea conectora también debe "morir" */
+.root-control:has(.root-btn.cut)::before {
+    background: #475569; /* Gris muerto */
+    opacity: 0.5;
+}
+
+/* El Hacha */
+.axe-control { margin-top: 4rem; position: relative; z-index: 30; }
+.btn-axe {
+    background: #334155;
+    color: #64748b;
+    border: none;
+    padding: 1.5rem 4rem; /* Botón grande */
+    font-size: 1.3rem;
+    border-radius: 12px;
+    cursor: not-allowed;
+    transition: all 0.3s;
+    font-weight: 900;
+    letter-spacing: 2px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-axe.ready {
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4), 0 0 0 5px rgba(249, 115, 22, 0.2); /* Glow */
+    animation: pulse-ready 1.5s infinite;
+    transform: scale(1.1);
+}
+
+.btn-axe.ready:active { transform: scale(0.95) rotate(-2deg); }
+
+@keyframes pulse-ready { 0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(249, 115, 22, 0); } 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); } }
+
+/* Animaciones del Árbol */
+.shake { animation: shake-hard 0.2s; }
+@keyframes shake-hard {
+    0% { transform: translate(2px, 2px) rotate(0deg); }
+    50% { transform: translate(-2px, -2px) rotate(-2deg); }
+    100% { transform: translate(2px, -2px) rotate(2deg); }
+}
+
+.tree-falling {
+    transform: rotate(95deg) translateY(200px);
+    opacity: 0;
+    filter: grayscale(1) blur(5px);
+    transition: all 1.5s ease-in;
+}
+
+.victory-box {
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid #10b981;
+    padding: 3rem;
+    border-radius: 16px;
+    margin-top: -100px; /* Superponer sobre el árbol caído */
+    position: relative;
+    z-index: 50;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }

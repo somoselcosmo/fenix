@@ -1,0 +1,18 @@
+/* Loader Global */
+#global-loader {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: var(--bg-main); z-index: 9999;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+#global-loader.fade-out { opacity: 0; visibility: hidden; }
+#global-loader p { margin-top: 1rem; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; animation: pulse 1.5s infinite; }
+
+.spinner {
+    width: 50px; height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%; border-top-color: var(--accent);
+    animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }

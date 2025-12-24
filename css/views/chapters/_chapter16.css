@@ -1,0 +1,92 @@
+/* --- CAPÍTULO 16: 12 PASOS --- */
+
+/* Barra de Progreso */
+.mission-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background: #0f172a;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+
+.mission-step {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64748b;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.mission-step.active {
+    background: var(--accent);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+}
+
+/* Contenedor del Launch Pad */
+.launch-pad {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    min-height: 400px;
+}
+
+/* Tarjetas de Input */
+.input-card {
+    background: rgba(0,0,0,0.2);
+    padding: 1rem;
+    border-left: 3px solid #334155;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.input-card label {
+    display: block;
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+/* Alertas de Leyes */
+.law-alert {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid #3b82f6;
+    color: #93c5fd;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideDown 0.5s;
+}
+
+@keyframes slideDown { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* Slider de Creencia */
+.belief-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#belief-val { font-weight: bold; color: #fff; min-width: 100px; }
+
+/* Botón de Lanzamiento */
+#finish-chap-16 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    background: #22c55e;
+}

@@ -1,0 +1,2998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fénix Digital | El Camino al Alto Rendimiento</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!-- PRELOADER GLOBAL: La Cortinax -->
+    <div id="global-loader">
+        <div class="spinner"></div>
+        <p>Cargando disciplina...</p>
+    </div>
+    <!-- Header sutil con navegación de acceso -->
+    <header class="navbar">
+        <div class="logo">MÉTODO <span>FÉNIX</span></div>
+        <nav>
+            <button id="btn-login" class="btn-link">¿Ya tienes cuenta? Iniciar Sesión</button>
+        </nav>
+    </header>
+
+    <!-- Contenedor Principal Split -->
+    <main class="split-screen">
+        
+        <!-- Lado Izquierdo: El Cuestionario -->
+        <section class="quiz-column">
+            <div id="quiz-container" class="quiz-content">
+                
+                <!-- PANTALLA INICIAL (Hero) -->
+                <div id="step-0" class="step active">
+                    <span class="badge">Análisis de Potencial</span>
+                    <h1>Diseña tu futuro con precisión científica.</h1>
+                    <p>Toma 1 minuto para diagnosticar tu estado actual de disciplina.</p>
+                    <button id="start-quiz-btn" class="btn-primary">Empezar ahora — Es gratis</button>
+                </div>
+
+                <!-- PASO 1: IDENTIDAD -->
+                <div id="step-1" class="step hidden">
+                    <span class="step-indicator">Paso 1 de 5</span>
+                    <h2>Para personalizar tu experiencia, dinos:</h2>
+                    <p class="subtitle">¿Cómo te identificas?</p>
+                    <div class="options-grid">
+                        <button class="option-btn" data-next="2" data-key="genero" data-value="hombre">Hombre</button>
+                        <button class="option-btn" data-next="2" data-key="genero" data-value="mujer">Mujer</button>
+                    </div>
+                    <button class="btn-subtle" data-next="2" data-key="genero" data-value="n/a">Preferiría no responder</button>
+                </div>
+
+                <!-- PASO 2: LEGADO -->
+                <div id="step-2" class="step hidden">
+                    <span class="step-indicator">Paso 2 de 5</span>
+                    <h2>Tu Círculo de Influencia</h2>
+                    <p class="subtitle">Brian Tracy enseña que "instruimos por precepto, pero enseñamos por ejemplo".</p>
+                    <div class="options-stack">
+                        <button class="option-btn" data-next="3" data-key="hijos" data-value="si">
+                            Sí, tengo hijos 
+                            <span style="display:block; font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">(Quiero ser su mejor modelo a seguir)</span>
+                        </button>
+                        
+                        <button class="option-btn" data-next="3" data-key="hijos" data-value="futuro">
+                            No, pero planeo tenerlos
+                            <span style="display:block; font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">(Quiero prepararme mentalmente)</span>
+                        </button>
+                        
+                        <button class="option-btn" data-next="3" data-key="hijos" data-value="no">
+                            No tengo hijos
+                            <span style="display:block; font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">(Mi enfoque es mi desarrollo personal y profesional)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PASO 3: DOLOR -->
+                <div id="step-3" class="step hidden">
+                    <span class="step-indicator">Paso 3 de 5</span>
+                    <h2>Identifica tu mayor obstáculo</h2>
+                    <p class="subtitle">¿Qué es lo que más te frena hoy?</p>
+                    <div class="options-stack">
+                        <button class="option-btn" data-next="4" data-key="dolor" data-value="procrastinacion">La Procrastinación (Postergación)</button>
+                        <button class="option-btn" data-next="4" data-key="dolor" data-value="miedo">Miedo al Fracaso (Parálisis)</button>
+                        <button class="option-btn" data-next="4" data-key="dolor" data-value="enfoque">Falta de Enfoque (Dispersión)</button>
+                    </div>
+                </div>
+
+                <!-- PASO 4: TIEMPO AL ÉXITO -->
+                <div id="step-4" class="step hidden">
+                    <span class="step-indicator">Paso 4 de 5</span>
+                    <h2>Expectativa de tiempo</h2>
+                    <p class="subtitle">¿En cuánto tiempo crees que alcanzarás el éxito total?</p>
+                    <div class="options-stack">
+                        <button class="option-btn" data-next="5" data-key="tiempo" data-value="corto">Menos de 1 año</button>
+                        <button class="option-btn" data-next="5" data-key="tiempo" data-value="medio">Entre 2 y 5 años</button>
+                        <button class="option-btn" data-next="5" data-key="tiempo" data-value="largo">Es un proyecto de vida</button>
+                    </div>
+                </div>
+
+                <!-- PASO 5: EL GRÁFICO (Impacto Visual) -->
+                <div id="step-5" class="step hidden">
+                    <h2>El Factor Fénix</h2>
+                    <p class="subtitle">Tu camino proyectado con nuestro método vs. el esfuerzo sin guía.</p>
+                    
+                    <div class="chart-container">
+                        <!-- Aquí irá tu imagen home2.png o similar -->
+                        <img src="./assets/img/hi.png" alt="Gráfico de éxito" class="success-chart">
+                    </div>
+
+                    <p class="chart-disclaimer">Basado en la Ley de la Acumulación: pequeños cambios, resultados masivos.</p>
+                    <button id="finish-quiz" class="btn-primary">¡Entendido!</button>
+                </div>
+                <!-- PASO 6: EL COMPROMISO (Registro) -->
+                <div id="step-6" class="step hidden">
+                    <span class="badge">Paso Final</span>
+                    <h2>Activa tu transformación</h2>
+                    <p class="subtitle">Guarda tu análisis y accede a tu plan personalizado.</p>
+
+                    <form id="signup-form" class="auth-form">
+                        
+                        <!-- Opción VIP: Google (Fricción Cero) -->
+                        <button type="button" id="google-login-btn" class="btn-google">
+                            <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
+                                <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                                <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                                <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                                <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            </svg>
+                            <span>Continuar con Google</span>
+                        </button>
+
+                        <!-- El Separador Estético -->
+                        <div class="divider">
+                            <span>O con tu correo</span>
+                        </div>
+
+                        <!-- Los Inputs Clásicos (Lo que ya tenías) -->
+                        <div class="input-group">
+                            <label for="user-name">Nombre (Tu identidad)</label>
+                            <input type="text" id="user-name" placeholder="Ej. Juan Fénix" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="user-email">Correo Electrónico</label>
+                            <input type="email" id="user-email" placeholder="nombre@ejemplo.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="user-password">Contraseña (Mín. 6 caracteres)</label>
+                            <input type="password" id="user-password" placeholder="••••••••" required>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms-check" required>
+                            <label for="terms-check">Acepto los <a href="#">Términos</a> y me comprometo con mi proceso.</label>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Crear Cuenta y Guardar Progreso</button>
+                    </form>
+                    
+                    <p class="legal-text">Al continuar, aceptas comprometerte con tu propia excelencia.</p>
+                </div>
+            </div>
+            <!-- ... aquí termina el div id="quiz-container" ... -->
+
+            <!-- CONTENEDOR DE LOGIN (Oculto inicialmente) -->
+            <div id="login-container" class="quiz-content hidden">
+                <span class="badge">Acceso a Miembros</span>
+                <h1>Bienvenido de nuevo.</h1>
+                <p class="subtitle">La disciplina es el puente entre metas y logros.</p>
+
+                <form id="login-form" class="auth-form">
+                    
+                    <!-- Botón Google Reutilizado -->
+                    <button type="button" id="google-signin-btn" class="btn-google">
+                        <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24px" height="24px">
+                            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                        </svg>
+                        <span>Entrar con Google</span>
+                    </button>
+
+                    <div class="divider">
+                        <span>O con tu correo</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="login-email">Correo Electrónico</label>
+                        <input type="email" id="login-email" placeholder="nombre@ejemplo.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                        <a href="#" class="forgot-link" id="forgot-btn">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width">Entrar al Sistema</button>
+                </form>
+
+                <div class="login-footer">
+                    <p>¿Aún no tienes cuenta? <button id="back-to-quiz-btn" class="text-btn">Empieza tu análisis aquí</button></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lado Derecho: La Imagen de Autoridad -->
+        <section class="image-column">
+            <img src="./assets/img/home1.png" alt="Brian Tracy - Seminario Fénix" class="mentor-image">
+            <div class="image-overlay"></div>
+            <div class="quote-overlay">
+                <blockquote>"Tu capacidad de ir de la meta a la realización determina tu valor."</blockquote>
+            </div>
+        </section>
+
+    </main>
+    <!-- EL SANTUARIO (Dashboard de la App) -->
+    <!-- Solo visible cuando hay usuario logueado -->
+    <div id="app-dashboard" class="dashboard-container hidden">
+        
+        <!-- Sidebar de Progreso (Gamificado) -->
+        <aside class="sidebar">
+            <div class="brand">FÉNIX <span style="font-size:0.5em; color:var(--text-secondary)">OS</span></div>
+            
+            <div class="user-level-display">
+                <div class="level-badge">Nivel 1</div>
+                <p>Iniciado</p>
+            </div>
+
+            <nav class="roadmap-menu">
+                <!-- CAPÍTULO 1: ABIERTO -->
+                <div class="module-item active" data-chapter="1">
+                    <div class="module-status"></div> <!-- Línea naranja lateral -->
+                    <div class="module-info">
+                        <span class="module-number">01</span>
+                        <span class="module-title">La Psicología del Éxito</span>
+                    </div>
+                </div>
+
+                <!-- CAPÍTULO 2: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="2">
+                    <div class="module-info">
+                        <span class="module-number">02</span>
+                        <span class="module-title">7 Leyes Mentales</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+
+                <!-- CAPÍTULO 3: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="3">
+                    <div class="module-info">
+                        <span class="module-number">03</span>
+                        <span class="module-title">Desbloquea tu Potencial</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                
+                 <!-- CAPÍTULO 4: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="4">
+                    <div class="module-info">
+                        <span class="module-number">04</span>
+                        <span class="module-title">Tu Central de Energía</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 5: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="5">
+                    <div class="module-info">
+                        <span class="module-number">05</span>
+                        <span class="module-title">Cómo hacerse cargo de sí mismo</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 6: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="6">
+                    <div class="module-info">
+                        <span class="module-number">06</span>
+                        <span class="module-title">Eliminando emociones negativas</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 7: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="7">
+                    <div class="module-info">
+                        <span class="module-number">07</span>
+                        <span class="module-title">Liberando sus frenos</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 8: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="8">
+                    <div class="module-info">
+                        <span class="module-number">08</span>
+                        <span class="module-title">El destructor de preocupaciones</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 9: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="9">
+                    <div class="module-info">
+                        <span class="module-number">09</span>
+                        <span class="module-title">Cómo programar su mente para el éxito</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 10: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="10">
+                    <div class="module-info">
+                        <span class="module-number">10</span>
+                        <span class="module-title">Cambiando su concepto propio</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 11: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="11">
+                    <div class="module-info">
+                        <span class="module-number">11</span>
+                        <span class="module-title">La nueva dieta mental</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 12: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="12">
+                    <div class="module-info">
+                        <span class="module-number">12</span>
+                        <span class="module-title">Software para el cerebro</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 13: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="13">
+                    <div class="module-info">
+                        <span class="module-number">13</span>
+                        <span class="module-title">Técnicas de aprendizaje rápido</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 14: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="14">
+                    <div class="module-info">
+                        <span class="module-number">14</span>
+                        <span class="module-title">Sugestopedia</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 15: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="15">
+                    <div class="module-info">
+                        <span class="module-number">15</span>
+                        <span class="module-title">Claves para el establecimiento de metas</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 16: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="16">
+                    <div class="module-info">
+                        <span class="module-number">16</span>
+                        <span class="module-title">Doce pasos hacia la consecución de las metas</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 17: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="17">
+                    <div class="module-info">
+                        <span class="module-number">17</span>
+                        <span class="module-title">El tiempo como herramienta de poder</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 18: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="18">
+                    <div class="module-info">
+                        <span class="module-number">18</span>
+                        <span class="module-title">El poder mental</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 19: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="19">
+                    <div class="module-info">
+                        <span class="module-number">19</span>
+                        <span class="module-title">La autodisciplina en acción</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 20: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="20">
+                    <div class="module-info">
+                        <span class="module-number">20</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 21: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="21">
+                    <div class="module-info">
+                        <span class="module-number">21</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 22: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="22">
+                    <div class="module-info">
+                        <span class="module-number">22</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 23: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="23">
+                    <div class="module-info">
+                        <span class="module-number">23</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div> 
+                <!-- CAPÍTULO 24: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="24">
+                    <div class="module-info">
+                        <span class="module-number">24</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 25: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="25">
+                    <div class="module-info">
+                        <span class="module-number">25</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 26: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="26">
+                    <div class="module-info">
+                        <span class="module-number">26</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+                <!-- CAPÍTULO 27: BLOQUEADO -->
+                <div class="module-item locked" data-chapter="27">
+                    <div class="module-info">
+                        <span class="module-number">27</span>
+                        <span class="module-title">Tu plan de acción personal</span>
+                    </div>
+                    <span class="lock-icon">🔒</span>
+                </div>
+
+            </nav>
+
+            <button id="logout-btn" class="btn-logout">Cerrar Sesión</button>
+        </aside>
+
+        <!-- Área Principal de Trabajo (Derecha) -->
+        <main class="workspace">
+            <header class="top-bar">
+                <div class="welcome-msg">
+                    <h2>Bienvenido, <span id="user-name-display">Cargando...</span></h2>
+                    <p class="date-display">Hoy es el primer día del resto de tu vida.</p>
+                </div>
+                <div class="efficiency-clock">
+                    <span>14:30</span> <!-- Luego haremos que esto sea real -->
+                </div>
+            </header>
+
+            <!-- Aquí inyectaremos los módulos (Metas, Foco, etc.) -->
+            <div id="workspace-content" class="content-area">
+                
+                <!-- VISTA CAPÍTULO 1 -->
+                <section id="chapter-1-view" class="chapter-view fade-in">
+                    <!-- ACTO 1: LA REVELACIÓN -->
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 01: El Despertar</span>
+                        <h1>¿Por qué unos ganan más que otros?</h1>
+                        <p class="hero-text">
+                            El éxito no es un accidente. Es tan predecible como que el sol sale por el Este.
+                        </p>
+                    </header>
+
+                    <!-- INTERACCIÓN 1: ROMPIENDO MITOS (Flip Cards) -->
+                    <div class="myth-buster-section">
+                        <h3>Descartando Conceptos Errados</h3>
+                        <p class="section-desc">Toca las tarjetas para descubrir la verdad.</p>
+                        
+                        <div class="cards-grid">
+                            <!-- Mito 1 -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <span class="myth-icon">🎓</span>
+                                        <h4>Mito: Educación</h4>
+                                        <p>"Necesitas títulos universitarios para triunfar."</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <span class="truth-icon">💡</span>
+                                        <h4>La Realidad</h4>
+                                        <p>El éxito se basa en el <strong>Instinto de Triunfo</strong>, no en diplomas. Es la fuerza motriz que nos empuja a la acción.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mito 2 -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <span class="myth-icon">💰</span>
+                                        <h4>Mito: Dinero</h4>
+                                        <p>"Necesitas dinero para hacer dinero."</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <span class="truth-icon">🔥</span>
+                                        <h4>La Realidad</h4>
+                                        <p>El dinero es un efecto, no la causa. La causa es la <strong>Satisfacción Personal</strong> y el valor que aportas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACTO 2: LAS 7 CATEGORÍAS DEL ÉXITO (Acordeón) -->
+                    <div class="categories-section">
+                        <h3>La Anatomía del Éxito</h3>
+                        <p class="section-desc">El éxito no es solo dinero. Si fallas en una, el sistema colapsa.</p>
+
+                        <div class="accordion">
+                            <details class="category-item">
+                                <summary>
+                                    <span class="cat-icon">🧘‍♂️</span>
+                                    <span class="cat-title">1. Paz Mental (La Base)</span>
+                                    <span class="cat-arrow">▼</span>
+                                </summary>
+                                <div class="cat-content">
+                                    <p>Es el estado de armonía interna. Sin ella, ninguna victoria se disfruta. Es la ausencia de miedo, estrés y culpa.</p>
+                                    <blockquote class="mini-quote">"La psique enferma al soma."</blockquote>
+                                </div>
+                            </details>
+
+                            <details class="category-item">
+                                <summary>
+                                    <span class="cat-icon">⚡</span>
+                                    <span class="cat-title">2. Salud y Energía</span>
+                                    <span class="cat-arrow">▼</span>
+                                </summary>
+                                <div class="cat-content">
+                                    <p>El 80% de los problemas de salud vienen de la falta de paz mental. Tu cuerpo es el vehículo de tu propósito.</p>
+                                </div>
+                            </details>
+
+                            <details class="category-item">
+                                <summary>
+                                    <span class="cat-icon">❤️</span>
+                                    <span class="cat-title">3. Relaciones Afectivas</span>
+                                    <span class="cat-arrow">▼</span>
+                                </summary>
+                                <div class="cat-content">
+                                    <p>El 85% de tu éxito depende de cómo te llevas con los demás. <strong>Prueba rápida:</strong> ¿Cuánto te ríes en tus relaciones?</p>
+                                </div>
+                            </details>
+
+                            <details class="category-item">
+                                <summary>
+                                    <span class="cat-icon">💸</span>
+                                    <span class="cat-title">4. Libertad Económica</span>
+                                    <span class="cat-arrow">▼</span>
+                                </summary>
+                                <div class="cat-content">
+                                    <p>Tener suficiente dinero para no preocuparte por él. Debes sacar el dinero de tu mente para llenarla de causas superiores.</p>
+                                </div>
+                            </details>
+                            
+                            <!-- Agregamos las restantes resumidas por brevedad en el código, tú ponlas todas -->
+                            <details class="category-item">
+                                <summary>
+                                    <span class="cat-icon">🎯</span>
+                                    <span class="cat-title">5. Metas e Ideales Valiosos</span>
+                                    <span class="cat-arrow">▼</span>
+                                </summary>
+                                <div class="cat-content">
+                                    <p>Necesitas una dirección clara. ¿Qué te hace levantar cada mañana? Los valores guían tu camino.</p>
+                                </div>
+                            </details>
+                            <!-- 6. AUTOCONOCIMIENTO -->
+                            <details class="category-item">
+                                <summary>
+                                    <span class="cat-icon">🪞</span>
+                                    <span class="cat-title">6. Autoconocimiento y Autocomprensión</span>
+                                    <span class="cat-arrow">▼</span>
+                                </summary>
+                                <div class="cat-content">
+                                    <p>
+                                        Requiere <strong>valentía y honestidad brutal</strong> para aceptar tus debilidades y fortalezas. 
+                                        No puedes cambiar lo que no entiendes. Es el arte de saber qué impulsa realmente tus acciones.
+                                    </p>
+                                </div>
+                            </details>
+
+                            <!-- 7. SATISFACCIÓN PERSONAL -->
+                            <details class="category-item">
+                                <summary>
+                                    <span class="cat-icon">🌟</span>
+                                    <span class="cat-title">7. Satisfacción Personal (Autovaloración)</span>
+                                    <span class="cat-arrow">▼</span>
+                                </summary>
+                                <div class="cat-content">
+                                    <p>
+                                        Es la sensación profunda de saber que te estás convirtiendo en todo lo que eres capaz de ser. 
+                                        La estadística es cruel: la mayoría muere con su música dentro. 
+                                        <strong>Tu deber es agotar tu potencial.</strong>
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- ACTO 3: LA FÓRMULA MATEMÁTICA (Calculadora Interactiva) -->
+                    <div class="formula-section">
+                        <h3>La Fórmula Maestra</h3>
+                        <p class="formula-display">C x E = R</p>
+                        <p class="section-desc">Llegaste al mundo sin manual. Aquí está la ecuación:</p>
+                        
+                        <div class="calculator-box">
+                            <div class="slider-group">
+                                <label>Comprensión (C)</label>
+                                <input type="range" id="slider-c" min="0" max="10" value="1">
+                                <span id="val-c" class="val-display">1</span>
+                            </div>
+                            
+                            <div class="slider-group">
+                                <label>Esfuerzo (E)</label>
+                                <input type="range" id="slider-e" min="0" max="10" value="5">
+                                <span id="val-e" class="val-display">5</span>
+                            </div>
+
+                            <div class="result-bar-container">
+                                <label>Resultados (R)</label>
+                                <div class="progress-bar-bg">
+                                    <div id="bar-r" class="progress-bar-fill" style="width: 5%"></div>
+                                </div>
+                                <p id="formula-feedback" class="feedback-text">Poco entendimiento genera pocos resultados, aunque te esfuerces.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EL CONTRATO FINAL (Ya lo tenías, lo mantenemos al final) -->
+                    <div class="contract-section">
+                        <div class="contract-paper">
+                            <h2>CONTRATO DE COMPROMISO FÉNIX</h2>
+                            <p>Entiendo que C x E = R. Me comprometo a aumentar mi Comprensión y mantener mi Esfuerzo.</p>
+                            <div class="signature-area">
+                                <input type="text" id="signature-input" placeholder="Tu firma aquí..." autocomplete="off">
+                                <div class="signature-line"></div>
+                            </div>
+                            <button id="sign-contract-btn" class="btn-primary" disabled>Sellar y Avanzar</button>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- VISTA CAPÍTULO 2: LAS 7 LEYES -->
+                <section id="chapter-2-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 02: El Sistema Operativo</span>
+                        <h1>Las 7 Leyes de Acero</h1>
+                        <p class="hero-text">
+                            Toca cada ley para estudiarla y activarla.
+                        </p>
+                    </header>
+
+                    <!-- EL CIRCUITO (Se llena solo con JS) -->
+                    <div class="laws-grid">
+                        <!-- JS INYECTARÁ LAS TARJETAS AQUÍ -->
+                    </div>
+
+                    <!-- EL MODAL DE MAESTRÍA (Estructura Vacía) -->
+                    <div id="law-modal" class="modal-overlay hidden">
+                        <div class="modal-content">
+                            <button class="close-modal-btn">&times;</button>
+                            
+                            <div class="modal-header">
+                                <span id="modal-icon" class="modal-big-icon"></span>
+                                <h2 id="modal-title"></h2>
+                            </div>
+                            
+                            <div id="modal-body" class="modal-body-text"></div>
+
+                            <div id="modal-interaction" class="modal-footer"></div>
+                        </div>
+                    </div>
+                </section>
+                <!-- VISTA CAPÍTULO 3: EL POTENCIAL -->
+                <section id="chapter-3-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 03: Ingeniería Interna</span>
+                        <h1>Desbloqueando tu Potencial</h1>
+                        <p class="hero-text">
+                            La distancia entre donde estás y donde podrías estar es una fórmula matemática.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: LA CALCULADORA PHI -->
+                    <div class="lab-section">
+                        <h3>La Fórmula del Desempeño Humano</h3>
+                        <div class="formula-visual">
+                            <span class="var">(AI + AA)</span>
+                            <span class="operator">x</span>
+                            <span class="var highlight">A</span>
+                            <span class="operator">=</span>
+                            <span class="result">PHI</span>
+                        </div>
+                        <p class="lab-desc">
+                            AI = Atributos Innatos | AA = Adquiridos | <strong>A = Actitud</strong>
+                            <br>Prueba mover los valores. Descubre qué factor multiplica tus resultados.
+                        </p>
+
+                        <div class="phi-calculator">
+                            <div class="sliders-container">
+                                <div class="control-group">
+                                    <label>Tu Talento Natural (AI)</label>
+                                    <input type="range" id="range-ai" min="1" max="10" value="5">
+                                </div>
+                                <div class="control-group">
+                                    <label>Tu Educación (AA)</label>
+                                    <input type="range" id="range-aa" min="1" max="10" value="5">
+                                </div>
+                                <div class="control-group attitude-group">
+                                    <label>Tu Actitud (A) - ¡El Multiplicador!</label>
+                                    <input type="range" id="range-a" min="0" max="10" value="1">
+                                </div>
+                            </div>
+                            
+                            <div class="result-display">
+                                <div class="phi-meter">
+                                    <div id="phi-fill" class="phi-fill"></div>
+                                </div>
+                                <h2 id="phi-value">0</h2>
+                                <p id="phi-message">Tu actitud está matando tu potencial.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: EL REACTOR DE AUTOESTIMA -->
+                    <div class="lab-section reactor-section locked" id="reactor-section">
+                        <div class="lock-overlay" id="reactor-lock">
+                            <span class="lock-icon">🔒</span>
+                            <p>Domina la fórmula arriba para desbloquear el Reactor.</p>
+                        </div>
+
+                        <h3>El Núcleo del Sistema: Autoconcepto</h3>
+                        <p class="lab-desc">
+                            Tu mundo exterior es un reflejo de tu mundo interior. 
+                            Para cambiar los frutos, debes cambiar las raíces.
+                        </p>
+
+                        <div class="reactor-core">
+                            <!-- Círculos Concéntricos Visuales -->
+                            <div class="circle ideal">
+                                <span class="label">Ideal Propio</span>
+                                <div class="circle image">
+                                    <span class="label">Autoimagen</span>
+                                    <div class="circle esteem">
+                                        <span class="label">Autoestima</span>
+                                        <div class="nuclear-core">
+                                            <button id="pump-btn" class="pump-btn">
+                                                <span class="pump-icon">❤️</span>
+                                                <span class="pump-text">BOMBEAR</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pump-stats">
+                            <p>Carga de Energía Subconsciente:</p>
+                            <div class="energy-bar-bg">
+                                <div id="energy-bar" class="energy-bar-fill" style="width: 0%"></div>
+                            </div>
+                            <p class="instruction-blink">
+                                Repite: <strong>"¡ME AGRADA MI PERSONA!"</strong> y pulsa el botón repetidamente para cargar el sistema.
+                            </p>
+                        </div>
+                        
+                        <button id="finish-chap-3" class="btn-primary full-width hidden">
+                            Energía al 100%. Guardar y Continuar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 4: EL SUBCONSCIENTE -->
+                <section id="chapter-4-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 04: El Superordenador</span>
+                        <h1>Tu Central de Energía</h1>
+                        <p class="hero-text">
+                            Tu mente consciente es el capitán (10%). <br>
+                            Tu subconsciente es la tripulación y el motor (90%).
+                        </p>
+                    </header>
+
+                    <!-- SECCIÓN 1: EL JARDÍN (Ley de Actividad Subconsciente) -->
+                    <div class="lab-section">
+                        <h3>La Metáfora del Jardinero</h3>
+                        <p class="lab-desc">Tu consciente elige la semilla. Tu subconsciente la hace crecer, sea flor o veneno.</p>
+                        
+                        <div class="garden-container">
+                            <div class="seed-selection">
+                                <p>¿Qué vas a plantar hoy?</p>
+                                <div class="seed-options">
+                                    <button class="seed-btn negative" onclick="plantSeed('fear')">💀 Temor</button>
+                                    <button class="seed-btn positive" onclick="plantSeed('success')">🌳 Éxito</button>
+                                </div>
+                            </div>
+                            <div id="garden-display" class="garden-display">
+                                <span class="garden-status">Esperando semillas...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 2: LEY DE SUSTITUCIÓN (Interactivo) -->
+                    <div class="lab-section locked" id="substitution-section">
+                        <div class="lock-overlay" id="lock-4-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Ley de la Sustitución</h3>
+                        <p class="lab-desc">La mente solo puede sostener un pensamiento a la vez. Haz la prueba.</p>
+
+                        <div class="mind-screen" id="mind-screen">
+                            <div id="thought-display" class="thought negative">"NO SOY CAPAZ"</div>
+                        </div>
+
+                        <div class="control-panel">
+                            <button id="btn-substitute" class="btn-action">🔄 SUSTITUIR PENSAMIENTO</button>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 3: LEY DE CONCENTRACIÓN (Hold to charge) -->
+                    <div class="lab-section locked" id="concentration-section">
+                        <div class="lock-overlay" id="lock-4-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Ley de la Concentración</h3>
+                        <p class="lab-desc">Lo que se piensa, crece. Mantén el foco para materializar.</p>
+
+                        <div class="focus-chamber">
+                            <div class="focus-target">
+                                <div id="focus-circle" class="focus-circle"></div>
+                            </div>
+                            <button id="btn-focus" class="btn-primary full-width">MANTENER FOCO (Hold)</button>
+                        </div>
+                    </div>
+
+                    <!-- FINALIZAR -->
+                    <button id="finish-chap-4" class="btn-primary full-width hidden">
+                        Datos Procesados. Guardar Módulo.
+                    </button>
+
+                </section>
+                <!-- VISTA CAPÍTULO 5: RESPONSABILIDAD -->
+                <section id="chapter-5-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 05: Madurez Mental</span>
+                        <h1>Cómo hacerse cargo de su vida</h1>
+                        <p class="hero-text">
+                            El punto de quiebre entre la infancia y la adultez no es la edad. Es la Responsabilidad.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: EL MANIFIESTO (Lectura Solemne) -->
+                    <div class="manifesto-container">
+                        <div class="manifesto-paper">
+                            <h3>El Credo del Arquitecto</h3>
+                            <p>Yo soy el arquitecto de mi propio destino.</p>
+                            <p>Todo lo que soy y todo lo que seré depende de mí.</p>
+                            <p>Si no me gusta cómo están las cosas, <strong>soy yo quien debe cambiarlas.</strong></p>
+                            <p>Como dijo Henry Ford: <em>"Nunca te quejes, nunca expliques"</em>.</p>
+                            <hr>
+                            <p class="warning-text">La queja es el refugio de quienes se niegan a crecer.</p>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: EL CEMENTERIO DE EXCUSAS -->
+                    <div class="lab-section locked" id="excuse-section">
+                        <div class="lock-overlay" id="lock-5-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Diagnóstico de "Excusitis"</h3>
+                        <p class="lab-desc">
+                            Identifica tus enemigos. Haz clic en las excusas que has usado recientemente para <strong>eliminarlas</strong> de tu sistema.
+                            <br>(Debes eliminar al menos 3 para avanzar).
+                        </p>
+
+                        <div class="excuses-grid" id="excuses-grid">
+                            <!-- Se generarán con JS -->
+                        </div>
+                        
+                        <p id="excuse-counter" class="counter-text">Excusas eliminadas: 0 / 3</p>
+                    </div>
+
+                    <!-- FASE 3: EL MANTRA DE PODER -->
+                    <div class="lab-section locked" id="mantra-section">
+                        <div class="lock-overlay" id="lock-5-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>La Vacuna contra la Negatividad</h3>
+                        <p class="lab-desc">
+                            Cada vez que sientas ira o ganas de culpar a alguien, di:
+                        </p>
+                        
+                        <div class="mantra-input-container">
+                            <h1 class="mantra-target">SOY RESPONSABLE</h1>
+                            <input type="text" id="mantra-input" class="mantra-field" placeholder="Escribe la frase aquí..." autocomplete="off">
+                            <div id="mantra-feedback" class="mantra-feedback"></div>
+                        </div>
+
+                        <button id="finish-chap-5" class="btn-primary full-width hidden">
+                            He tomado el control. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 6: EMOCIONES NEGATIVAS -->
+                <section id="chapter-6-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 06: Desintoxicación</span>
+                        <h1>El Árbol de las Emociones Negativas</h1>
+                        <p class="hero-text">
+                            No puedes avanzar si arrastras cadenas. <br>
+                            Las emociones negativas dependen de que tú las alimentes.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: TEORÍA VISUAL (Cita) -->
+                    <div class="quote-card-dark">
+                        <blockquote>"No existe la enfermedad mental, solo diferentes grados de irresponsabilidad."</blockquote>
+                        <cite>— Thomas Szasz</cite>
+                    </div>
+
+                    <!-- FASE 2: EL ÁRBOL (Juego Interactivo) -->
+                    <div class="lab-section tree-section">
+                        
+                        <div class="tree-status-bar">
+                            <span>Salud del Árbol Negativo:</span>
+                            <div class="health-bar-bg">
+                                <div id="tree-health" class="health-bar-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="tree-visual-container">
+                            <!-- El Árbol -->
+                            <div id="negative-tree" class="negative-tree">
+                                <!-- La masa de hojas oscura -->
+                                <div class="tree-foliage">
+                                    🤬 😭 <br> 😠 😤
+                                </div>
+                                <!-- El tronco -->
+                                <div class="tree-trunk"></div>
+                            </div>
+                            
+                            <!-- Las Raíces (Controles) -->
+                            <div class="roots-system">
+                                <div class="root-control">
+                                    <p>Raíz 1: Justificación</p>
+                                    <button class="root-btn active" id="root-justification" onclick="cutRoot('justification')">
+                                        CORTAR NUTRIENTE
+                                    </button>
+                                </div>
+                                <div class="root-control">
+                                    <p>Raíz 2: Identificación</p>
+                                    <button class="root-btn active" id="root-identification" onclick="cutRoot('identification')">
+                                        CORTAR NUTRIENTE
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="axe-control">
+                            <p id="axe-instruction">El árbol es demasiado fuerte. Corta las raíces primero.</p>
+                            <button id="axe-btn" class="btn-axe" disabled>
+                                <span class="axe-icon">🪓</span> ¡SOY RESPONSABLE!
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- MENSAJE FINAL (Oculto) -->
+                    <div id="victory-message" class="victory-box hidden">
+                        <h2>¡Árbol Derribado!</h2>
+                        <p>Has recuperado tu energía vital. Ahora eres libre para usarla en tus metas.</p>
+                        <button id="finish-chap-6" class="btn-primary full-width">Guardar Libertad</button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 7: LIBERANDO FRENOS -->
+                <section id="chapter-7-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 07: Libertad Total</span>
+                        <h1>Liberando sus Frenos</h1>
+                        <p class="hero-text">
+                            La culpa es el mayor destructor de potencial. <br>
+                            Hoy vamos a cortar las cadenas que te atan al pasado.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: EL DIAGNÓSTICO (Síntomas) -->
+                    <div class="lab-section">
+                        <h3>¿Cómo se manifiesta tu culpa?</h3>
+                        <p class="lab-desc">Selecciona los patrones que reconoces en ti (Sé honesto):</p>
+                        
+                        <div class="symptoms-grid">
+                            <button class="symptom-btn" onclick="toggleSymptom(this)">🎭 Síndrome del Impostor</button>
+                            <button class="symptom-btn" onclick="toggleSymptom(this)">🔪 Autocrítica Destructiva</button>
+                            <button class="symptom-btn" onclick="toggleSymptom(this)">🎮 Soy Fácilmente Manipulable</button>
+                            <button class="symptom-btn" onclick="toggleSymptom(this)">👉 Culpo a los demás</button>
+                            <button class="symptom-btn" onclick="toggleSymptom(this)">🗣️ Uso lenguaje de Víctima</button>
+                        </div>
+                        <p id="symptom-feedback" class="feedback-text hidden">Reconocerlo es el primer paso para sanarlo.</p>
+                    </div>
+
+                    <!-- FASE 2: LAS 4 CADENAS (La Ley del Perdón) -->
+                    <div class="chains-dungeon">
+                        <h3>La Ley del Perdón</h3>
+                        <p class="lab-desc">Para avanzar, debes perdonar libremente. Rompe las 4 cadenas para abrir la puerta del éxito.</p>
+
+                        <div class="chains-container">
+                            <!-- La Puerta al Éxito (Detrás de las cadenas) -->
+                            <div class="freedom-door">
+                                <div class="light-glow"></div>
+                                <span>LIBERTAD<br>INCONDICIONAL</span>
+                            </div>
+
+                            <!-- Cadena 1: Padres -->
+                            <div class="chain-lock" id="chain-1" onclick="openForgivenessModal(1)">
+                                <div class="chain-link"></div>
+                                <div class="chain-link"></div>
+                                <div class="chain-lock-body">
+                                    <span class="icon">👨‍👩‍👧</span>
+                                    <span>PADRES</span>
+                                </div>
+                                <div class="chain-link"></div>
+                            </div>
+
+                            <!-- Cadena 2: Otros -->
+                            <div class="chain-lock" id="chain-2" onclick="openForgivenessModal(2)">
+                                <div class="chain-link"></div>
+                                <div class="chain-link"></div>
+                                <div class="chain-lock-body">
+                                    <span class="icon">👥</span>
+                                    <span>OTROS</span>
+                                </div>
+                                <div class="chain-link"></div>
+                            </div>
+
+                            <!-- Cadena 3: Uno Mismo -->
+                            <div class="chain-lock" id="chain-3" onclick="openForgivenessModal(3)">
+                                <div class="chain-link"></div>
+                                <div class="chain-link"></div>
+                                <div class="chain-lock-body">
+                                    <span class="icon">👤</span>
+                                    <span>A MÍ MISMO</span>
+                                </div>
+                                <div class="chain-link"></div>
+                            </div>
+
+                            <!-- Cadena 4: Pedir Perdón -->
+                            <div class="chain-lock" id="chain-4" onclick="openForgivenessModal(4)">
+                                <div class="chain-link"></div>
+                                <div class="chain-link"></div>
+                                <div class="chain-lock-body">
+                                    <span class="icon">🙏</span>
+                                    <span>PEDIRLO</span>
+                                </div>
+                                <div class="chain-link"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MODAL DE PERDÓN (Específico para este cap) -->
+                    <div id="forgiveness-modal" class="modal-overlay hidden">
+                        <div class="modal-content dungeon-modal">
+                            <button class="close-modal-btn" onclick="closeForgivenessModal()">&times;</button>
+                            <h2 id="forgive-title">Perdonar a...</h2>
+                            <p id="forgive-desc" class="modal-body-text">Texto descriptivo...</p>
+                            
+                            <div class="ritual-area">
+                                <p>Escribe la frase liberadora:</p>
+                                <div class="mantra-target">PERDONO Y OLVIDO</div>
+                                <input type="text" id="forgive-input" class="modal-input text-center" placeholder="Escríbelo para romper la cadena..." autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FINALIZAR -->
+                    <div id="finish-chap-7-container" class="hidden">
+                        <button id="finish-chap-7" class="btn-primary full-width">
+                            Soy Libre. Guardar Progreso.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 8: DESTRUCTOR DE PREOCUPACIONES -->
+                <section id="chapter-8-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 08: Paz Mental</span>
+                        <h1>El Destructor de Preocupaciones</h1>
+                        <p class="hero-text">
+                            La preocupación es imaginación negativa. <br>
+                            Desármala con hechos y acción.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: LA REALIDAD ESTADÍSTICA -->
+                    <div class="lab-section">
+                        <h3>La Mentira de la Preocupación</h3>
+                        <p class="lab-desc">Toca las barras para ver la realidad de tus miedos.</p>
+                        
+                        <div class="stats-chart-container">
+                            <!-- Barra 40% -->
+                            <div class="stat-bar-group" onclick="revealStat(this, '40% - Cosas que NUNCA pasarán')">
+                                <div class="stat-bar" style="height: 40%;"></div>
+                                <span class="stat-label">40%</span>
+                            </div>
+                            <!-- Barra 30% -->
+                            <div class="stat-bar-group" onclick="revealStat(this, '30% - El Pasado (Ya no existe)')">
+                                <div class="stat-bar" style="height: 30%;"></div>
+                                <span class="stat-label">30%</span>
+                            </div>
+                            <!-- Barra 12% -->
+                            <div class="stat-bar-group" onclick="revealStat(this, '12% - Salud innecesaria')">
+                                <div class="stat-bar" style="height: 12%;"></div>
+                                <span class="stat-label">12%</span>
+                            </div>
+                            <!-- Barra 10% -->
+                            <div class="stat-bar-group" onclick="revealStat(this, '10% - Trivialidades')">
+                                <div class="stat-bar" style="height: 10%;"></div>
+                                <span class="stat-label">10%</span>
+                            </div>
+                            <!-- Barra 8% -->
+                            <div class="stat-bar-group real" onclick="revealStat(this, 'Solo el 4% son reales y controlables')">
+                                <div class="stat-bar" style="height: 8%;"></div>
+                                <span class="stat-label real">8%</span>
+                            </div>
+                        </div>
+                        <p id="stat-reveal-text" class="feedback-text">Haz clic en una barra...</p>
+                    </div>
+
+                    <!-- FASE 2: LA MÁQUINA DESTRUYE-PREOCUPACIONES -->
+                    <div class="lab-section locked" id="worry-machine-section">
+                        <div class="lock-overlay" id="lock-8-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Procesador de 4 Pasos</h3>
+                        <p class="lab-desc">Introduce una preocupación actual para desintegrarla.</p>
+
+                        <div class="worry-wizard">
+                            
+                            <!-- PASO 1: DEFINIR -->
+                            <div class="wizard-step active" id="w-step-1">
+                                <span class="step-badge">PASO 1</span>
+                                <h4>Claridad Absoluta</h4>
+                                <p>Escribe detalladamente: ¿Qué te preocupa exactamente?</p>
+                                <textarea id="worry-input-1" placeholder="Me preocupa que..."></textarea>
+                                <button class="btn-action" onclick="nextWorryStep(2)">Siguiente: Definir el Peor Caso</button>
+                            </div>
+
+                            <!-- PASO 2: PEOR CASO -->
+                            <div class="wizard-step hidden" id="w-step-2">
+                                <span class="step-badge">PASO 2</span>
+                                <h4>El Peor Escenario</h4>
+                                <p>Si todo sale mal, ¿qué es lo peor que podría pasar? (Mátalo por escrito)</p>
+                                <textarea id="worry-input-2" placeholder="Lo peor que podría pasar es..."></textarea>
+                                <button class="btn-action" onclick="nextWorryStep(3)">Siguiente: Aceptación</button>
+                            </div>
+
+                            <!-- PASO 3: ACEPTAR -->
+                            <div class="wizard-step hidden" id="w-step-3">
+                                <span class="step-badge">PASO 3</span>
+                                <h4>Neutralizar el Miedo</h4>
+                                <p>Di: "Si esto pasa, lo aceptaré". Al aceptarlo, el miedo desaparece.</p>
+                                <div class="acceptance-box">
+                                    <p id="worst-case-display">"..."</p>
+                                </div>
+                                <button class="btn-primary full-width" onclick="nextWorryStep(4)">ACEPTO LO PEOR (Liberar Tensión)</button>
+                            </div>
+
+                            <!-- PASO 4: MEJORAR -->
+                            <div class="wizard-step hidden" id="w-step-4">
+                                <span class="step-badge">PASO 4</span>
+                                <h4>Acción con Propósito</h4>
+                                <p>Ya aceptaste lo peor. Ahora, haz algo INMEDIATAMENTE para asegurarte de que no pase.</p>
+                                <input type="text" id="worry-action" placeholder="Mi primera acción será...">
+                                <button class="btn-action" onclick="finishWorryProcess()">ACTUAR AHORA</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MENSAJE FINAL (Cita de Roosevelt) -->
+                    <div id="finish-chap-8-container" class="quote-card-dark hidden">
+                        <blockquote>"Haz lo que puedas, donde estés, con lo que tienes, y no te preocupes por el resto."</blockquote>
+                        <cite>— Teddy Roosevelt</cite>
+                        <button id="finish-chap-8" class="btn-primary full-width" style="margin-top: 1rem;">Guardar Paz Mental</button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 9: REPROGRAMACIÓN MENTAL -->
+                <section id="chapter-9-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 09: Actualización de Software</span>
+                        <h1>Programando para el Éxito</h1>
+                        <p class="hero-text">
+                            Tu mente es un biocomputador. <br>
+                            Hasta ahora, ha corrido programas de otros. Hoy instalas el tuyo.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: ROMPER LA HOMEOSTASIS -->
+                    <div class="lab-section">
+                        <h3>El Enemigo: La Zona de Confort</h3>
+                        <p class="lab-desc">
+                            La <strong>Homeostasis</strong> quiere que todo siga igual. La <strong>Psicoesclerosis</strong> endurece tu actitud.
+                            <br>Golpea la zona de confort hasta romperla.
+                        </p>
+                        
+                        <div class="comfort-zone-container">
+                            <div id="comfort-zone-box" class="comfort-zone">
+                                <span>ZONA DE CONFORT</span>
+                                <div class="cracks"></div>
+                            </div>
+                            <p id="break-counter" class="feedback-text">Clics para romper: 10</p>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: LOS 4 MOTORES (Las 4 D's) -->
+                    <div class="lab-section locked" id="four-d-section">
+                        <div class="lock-overlay" id="lock-9-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Los 4 Pilares de la Reprogramación</h3>
+                        <p class="lab-desc">Activa los motores para instalar el nuevo hábito.</p>
+
+                        <div class="switches-grid">
+                            <!-- Deseo -->
+                            <div class="switch-card">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="switch-desire" onchange="checkFourDs()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <div class="switch-info">
+                                    <h4>1. Deseo</h4>
+                                    <p>Obsesión ardiente. Debes quererlo con intensidad.</p>
+                                </div>
+                            </div>
+
+                            <!-- Decisión -->
+                            <div class="switch-card">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="switch-decision" disabled onchange="checkFourDs()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <div class="switch-info">
+                                    <h4>2. Decisión</h4>
+                                    <p>Corta todas las excusas. Es sí o sí.</p>
+                                </div>
+                            </div>
+
+                            <!-- Determinación -->
+                            <div class="switch-card">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="switch-determination" disabled onchange="checkFourDs()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <div class="switch-info">
+                                    <h4>3. Determinación</h4>
+                                    <p>Persistencia blindada. Seguirás aunque falles.</p>
+                                </div>
+                            </div>
+
+                            <!-- Disciplina -->
+                            <div class="switch-card">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="switch-discipline" disabled onchange="checkFourDs()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <div class="switch-info">
+                                    <h4>4. Disciplina</h4>
+                                    <p>Hacer lo que debes, cuando debes, quieras o no.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: LEY DE REPETICIÓN (El Script de 21 Días) -->
+                    <div class="lab-section locked" id="habit-script-section">
+                        <div class="lock-overlay" id="lock-9-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Ley de la Repetición (21 Días)</h3>
+                        <p class="lab-desc">
+                            Un nuevo hábito tarda 21 días en instalarse. <br>
+                            Define TU nuevo hábito hoy.
+                        </p>
+
+                        <div class="script-terminal">
+                            <p class="terminal-line">> INICIANDO PROTOCOLO DE NUEVO HÁBITO...</p>
+                            <p class="terminal-line">> INGRESE COMANDO:</p>
+                            
+                            <input type="text" id="habit-input" class="terminal-input" placeholder="Ej: Leer 30 minutos diarios..." autocomplete="off">
+                            
+                            <div id="habit-confirmation" class="hidden">
+                                <p class="terminal-line success">> COMANDO ACEPTADO.</p>
+                                <p class="terminal-line">> GENERANDO COMPROMISO DE 21 DÍAS...</p>
+                                <p class="terminal-line">> EJECUTANDO LEY DE REVERSIBILIDAD (Fingir hasta lograr)...</p>
+                            </div>
+                        </div>
+
+                        <button id="finish-chap-9" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Instalar Programa
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 10: CONCEPTO PROPIO -->
+                <section id="chapter-10-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 10: Ingeniería del Yo</span>
+                        <h1>Cambiando su Concepto Propio</h1>
+                        <p class="hero-text">
+                            No obtienes lo que quieres. Obtienes lo que eres. <br>
+                            Es hora de rediseñar tu "Yo".
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: LA BRECHA (GAP ANALYSIS) -->
+                    <div class="lab-section">
+                        <h3>La Brecha de Autoestima</h3>
+                        <p class="lab-desc">
+                            Tu autoestima es la relación entre cómo te ves (Autoimagen) y cómo desearías ser (Ideal Propio).
+                            <br>Acerca las realidades para subir tu energía.
+                        </p>
+                        
+                        <div class="gap-analyzer">
+                            <div class="gap-visual">
+                                <div id="image-point" class="gap-point image">YO ACTUAL</div>
+                                <div id="ideal-point" class="gap-point ideal">YO IDEAL</div>
+                                <div id="connection-line" class="gap-line"></div>
+                            </div>
+                            
+                            <div class="gap-controls">
+                                <label>Claridad de tu Ideal:</label>
+                                <input type="range" id="ideal-slider" min="0" max="100" value="20">
+                                <p id="gap-feedback" class="feedback-text">Definición borrosa...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: LA TÉCNICA V.A.V.A. (Bloqueada al inicio) -->
+                    <div class="lab-section locked" id="vava-section">
+                        <div class="lock-overlay" id="lock-10-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Protocolo V.A.V.A.</h3>
+                        <p class="lab-desc">Visualización • Afirmación • Verbalización • Asunción</p>
+
+                        <!-- 1. VISUALIZACIÓN -->
+                        <div class="vava-step" id="v-step">
+                            <div class="step-header">
+                                <span class="step-icon">👁️</span>
+                                <h4>1. Visualización</h4>
+                            </div>
+                            <p>Cierra los ojos. El subconsciente no distingue imaginación de realidad.</p>
+                            <button class="btn-action" id="btn-visualize">INICIAR SIMULACIÓN (5s)</button>
+                        </div>
+
+                        <!-- 2. AFIRMACIÓN (Validador 3 P's) -->
+                        <div class="vava-step locked-step" id="a-step">
+                            <div class="step-header">
+                                <span class="step-icon">✍️</span>
+                                <h4>2. Afirmación (Las 3 P's)</h4>
+                            </div>
+                            <p>Personal, Positivo, Presente. Escribe: "Yo me agrado".</p>
+                            <input type="text" id="affirmation-input" class="code-input" placeholder="Ej: Yo soy disciplinado...">
+                            <div id="affirmation-error" class="error-msg hidden"></div>
+                            <button class="btn-action" id="btn-affirm" disabled>Validar Código</button>
+                        </div>
+
+                        <!-- 3. VERBALIZACIÓN (El Espejo) -->
+                        <div class="vava-step locked-step" id="ver-step">
+                            <div class="step-header">
+                                <span class="step-icon">🗣️</span>
+                                <h4>3. Verbalización</h4>
+                            </div>
+                            <p>Dilo en voz alta. Usa el espejo.</p>
+                            <div class="mirror-frame">
+                                <div class="mirror-reflection">TU REFLEJO AQUÍ</div>
+                            </div>
+                            <button class="btn-magnet" id="btn-speak">MANTÉN PULSADO Y HABLA</button>
+                        </div>
+
+                        <!-- 4. ASUNCIÓN (Acting) -->
+                        <div class="vava-step locked-step" id="act-step">
+                            <div class="step-header">
+                                <span class="step-icon">🎭</span>
+                                <h4>4. Asumir el Papel</h4>
+                            </div>
+                            <p>"Finge hasta que lo logres". La acción genera la emoción.</p>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="switch-actor" onchange="checkActorMode()">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span class="toggle-label">ACTIVAR MODO ACTOR</span>
+                        </div>
+
+                    </div>
+
+                    <!-- FINALIZAR -->
+                    <button id="finish-chap-10" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                        Identidad Actualizada. Guardar.
+                    </button>
+
+                </section>
+                <!-- VISTA CAPÍTULO 11: DIETA MENTAL -->
+                <section id="chapter-11-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 11: Bio-Hacking Mental</span>
+                        <h1>La Nueva Dieta Mental</h1>
+                        <p class="hero-text">
+                            Principio GIGO: Garbage In, Garbage Out. <br>
+                            Tu mente crea tu realidad con los datos que le das de comer.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: PROTOCOLO DE INGESTA (Menú Interactivo) -->
+                    <div class="lab-section">
+                        <h3>Selector de Nutrientes</h3>
+                        <p class="lab-desc">Elige qué vas a consumir hoy. Cuidado con la intoxicación.</p>
+                        
+                        <div class="diet-grid">
+                            <div class="diet-card toxic" onclick="consumeDiet('toxic')">
+                                <span class="icon">📺</span>
+                                <h4>Noticias / TV</h4>
+                                <p>Comida Chatarra</p>
+                            </div>
+                            <div class="diet-card healthy" onclick="consumeDiet('protein')">
+                                <span class="icon">📚</span>
+                                <h4>Libro (30 min)</h4>
+                                <p>Proteína Mental</p>
+                            </div>
+                            <div class="diet-card toxic" onclick="consumeDiet('toxic')">
+                                <span class="icon">🤬</span>
+                                <h4>Chismes</h4>
+                                <p>Veneno Puro</p>
+                            </div>
+                            <div class="diet-card healthy" onclick="consumeDiet('audio')">
+                                <span class="icon">🎧</span>
+                                <h4>Audio Seminario</h4>
+                                <p>Suplemento</p>
+                            </div>
+                        </div>
+                        <p id="diet-feedback" class="feedback-text">Estado del Sistema: Neutro</p>
+                    </div>
+
+                    <!-- FASE 2: UNIVERSIDAD SOBRE RUEDAS (Calculadora) -->
+                    <div class="lab-section locked" id="audio-section">
+                        <div class="lock-overlay" id="lock-11-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>La Universidad sobre Ruedas</h3>
+                        <p class="lab-desc">¿Cuánto tiempo pasas en transporte al día?</p>
+                        
+                        <div class="calc-container">
+                            <input type="range" id="commute-slider" min="0" max="4" step="0.5" value="1">
+                            <p class="slider-value"><span id="commute-val">1</span> Horas diarias</p>
+                            
+                            <div class="calc-result">
+                                <p>Equivalencia en 10 años:</p>
+                                <h2 id="university-result">2.5 Semestres Universitarios</h2>
+                            </div>
+                            
+                            <button class="btn-action" onclick="commitAudio()">Convertir mi auto en Universidad</button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: RADAR DE ASOCIACIONES (Águilas vs Pavos) -->
+                    <div class="lab-section locked" id="network-section">
+                        <div class="lock-overlay" id="lock-11-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Auditoría de Red</h3>
+                        <p class="lab-desc">"No puedes volar con las águilas si rascas el suelo con los pavos."</p>
+
+                        <div class="network-radar">
+                            <div class="radar-screen">
+                                <div class="radar-line"></div>
+                                <div class="blip eagle" style="top: 20%; left: 70%;">🦅</div>
+                                <div class="blip turkey" style="top: 60%; left: 30%;">🦃</div>
+                                <div class="blip eagle" style="top: 80%; left: 60%;">🦅</div>
+                            </div>
+                            <div class="radar-controls">
+                                <button class="btn-scan" onclick="scanNetwork()">ESCANEAR CÍRCULO SOCIAL</button>
+                            </div>
+                        </div>
+                        <p id="network-msg" class="feedback-text hidden">Amenaza detectada: Gente cínica. Acción: Eliminar.</p>
+                    </div>
+
+                    <!-- FASE 4: LA HORA DE ORO (Boot Sequence) -->
+                    <div class="lab-section locked" id="golden-hour-section">
+                        <div class="lock-overlay" id="lock-11-4"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Secuencia de Arranque (Boot Sequence)</h3>
+                        <p class="lab-desc">La primera hora define el "Estado" de todo el día.</p>
+
+                        <div class="boot-checklist">
+                            <label class="checkbox-item">
+                                <input type="checkbox" class="boot-check">
+                                <span class="checkmark"></span>
+                                Despertar y decir: "¡Me siento perfecto!"
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" class="boot-check">
+                                <span class="checkmark"></span>
+                                30 min de Lectura (Proteína)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" class="boot-check">
+                                <span class="checkmark"></span>
+                                Reescribir mis Metas en Presente
+                            </label>
+                        </div>
+
+                        <button id="finish-chap-11" class="btn-primary full-width hidden">
+                            Sistema Optimizado. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 12: SOFTWARE MENTAL -->
+                <section id="chapter-12-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 12: Instalación de Apps</span>
+                        <h1>Software para el Cerebro</h1>
+                        <p class="hero-text">
+                            Tu tiempo es el recurso #1. No lo gastes preocupándote.<br>
+                            Usa estas herramientas para programar resultados predecibles.
+                        </p>
+                    </header>
+
+                    <!-- HERRAMIENTA 1: PROGRAMACIÓN POR ESCRITO (La Terminal) -->
+                    <div class="lab-section">
+                        <h3>1. La Terminal Psicomotora</h3>
+                        <p class="lab-desc">
+                            Escribir es mágico: es visual, auditivo y kinestésico a la vez.
+                            <br>Escribe tu <strong>Meta Principal</strong> de hoy (Programación diaria).
+                        </p>
+                        
+                        <div class="cmd-terminal">
+                            <div class="cmd-header">
+                                <span class="cmd-dot red"></span>
+                                <span class="cmd-dot yellow"></span>
+                                <span class="cmd-dot green"></span>
+                                <span class="cmd-title">daily_goals.exe</span>
+                            </div>
+                            <div class="cmd-body">
+                                <div class="cmd-line">
+                                    <span class="prompt">user@fenix:~$</span>
+                                    <span class="cmd-text">iniciar_protocolo_escritura</span>
+                                </div>
+                                <div class="cmd-input-area">
+                                    <span class="prompt">></span>
+                                    <input type="text" id="daily-goal-input" placeholder="Escribe tu meta en presente..." autocomplete="off">
+                                </div>
+                                <p id="cmd-feedback" class="cmd-feedback hidden">Comando guardado en subconsciente.</p>
+                            </div>
+                            <button class="btn-action" id="btn-save-cmd">EJECUTAR COMANDO (Guardar)</button>
+                        </div>
+                    </div>
+
+                    <!-- HERRAMIENTA 2: EL FRENO DE EMERGENCIA (Técnica "¡Alto!") -->
+                    <div class="lab-section locked" id="stop-section">
+                        <div class="lock-overlay" id="lock-12-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>2. El Freno de Emergencia</h3>
+                        <p class="lab-desc">
+                            Cuando un pensamiento negativo o de temor aparezca, grita mentalmente: <strong>¡ALTO!</strong>
+                            <br>Detén el disco rayado ahora.
+                        </p>
+
+                        <div class="turntable-container">
+                            <div id="negative-disk" class="disk spinning">
+                                <span class="disk-label">MIEDO / DUDA</span>
+                            </div>
+                            <button id="btn-stop" class="btn-stop">¡ALTO!</button>
+                        </div>
+                    </div>
+
+                    <!-- HERRAMIENTA 3: LEY DE RELAJACIÓN (El Orbe de Flujo) -->
+                    <div class="lab-section locked" id="flow-section">
+                        <div class="lock-overlay" id="lock-12-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>3. Ley de la Relajación</h3>
+                        <p class="lab-desc">
+                            En el mundo mental, el esfuerzo se vence a sí mismo.
+                            <br><strong>Instrucción:</strong> No fuerces. Mantén el ratón suavemente sobre el orbe para cargarlo. Si haces clic o te mueves rápido, se rompe.
+                        </p>
+
+                        <div class="flow-container">
+                            <div id="flow-orb" class="flow-orb"></div>
+                            <div class="flow-bar-bg">
+                                <div id="flow-bar" class="flow-bar-fill"></div>
+                            </div>
+                            <p id="flow-status">Estado: Tensión</p>
+                        </div>
+
+                        <button id="finish-chap-12" class="btn-primary full-width hidden">
+                            Software Instalado. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 13: APRENDIZAJE ACELERADO -->
+                <section id="chapter-13-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 13: Overclocking Cerebral</span>
+                        <h1>Técnicas de Super Aprendizaje</h1>
+                        <p class="hero-text">
+                            Usas el 2% de tu capacidad. <br>
+                            Aprende a acceder al estado Alfa para absorber como una esponja.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: EL SINTONIZADOR DE ONDAS -->
+                    <div class="lab-section">
+                        <h3>Sintonizador de Frecuencias</h3>
+                        <p class="lab-desc">Desliza para encontrar el estado óptimo de aprendizaje (Alfa/Theta).</p>
+                        
+                        <div class="wave-tuner">
+                            <div class="wave-visualizer" id="wave-canvas">
+                                <!-- Aquí dibujaremos ondas con CSS/JS -->
+                                <div class="wave-line"></div>
+                            </div>
+                            
+                            <div class="tuner-controls">
+                                <input type="range" id="wave-slider" min="1" max="4" step="1" value="4">
+                                <div class="freq-labels">
+                                    <span>Delta (Sueño)</span>
+                                    <span>Theta (Creativo)</span>
+                                    <span>Alfa (Super Aprendizaje)</span>
+                                    <span>Beta (Estrés)</span>
+                                </div>
+                            </div>
+
+                            <div id="wave-info" class="wave-info">
+                                <h4 id="wave-name">Beta (14-29 Hz)</h4>
+                                <p id="wave-desc">Estado de alerta normal. Poca retención. Mucho ruido.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: EL EXPERIMENTO LAZONOV -->
+                    <div class="lab-section locked" id="lazonov-section">
+                        <div class="lock-overlay" id="lock-13-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>El Efecto Mozart</h3>
+                        <p class="lab-desc">
+                            La música barroca (60 bpm) sincroniza tu corazón y tu mente.
+                            <br>Activa el "Modo Super Aprendizaje".
+                        </p>
+
+                        <div class="audio-player-ui">
+                            <div class="track-info">
+                                <span class="icon">🎻</span>
+                                <span>Largo del Concierto No. 5 (Bach)</span>
+                            </div>
+                            <button id="btn-play-music" class="btn-action">
+                                ▶ ACTIVAR SINCRONIZACIÓN
+                            </button>
+                        </div>
+
+                        <div id="memory-test" class="memory-box hidden">
+                            <p>Memorizando en estado Alfa...</p>
+                            <div class="word-flash" id="word-flash">RELAJACIÓN</div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: LA RUTINA OPTIMIZADA -->
+                    <div class="lab-section locked" id="routine-section">
+                        <div class="lock-overlay" id="lock-13-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Tu Protocolo de Estudio</h3>
+                        <p class="lab-desc">Define tu objetivo para generar tu plan.</p>
+
+                        <div class="study-planner">
+                            <input type="text" id="learn-topic" class="modal-input" placeholder="Ej: Francés, Python, Historia...">
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="check-desire">
+                                <label for="check-desire">Tengo un DESEO intenso de aprender esto.</label>
+                            </div>
+
+                            <div id="study-plan" class="study-plan hidden">
+                                <h4>Plan Generado:</h4>
+                                <ul>
+                                    <li>🎵 <strong>Ambiente:</strong> Música Barroca de fondo.</li>
+                                    <li>⏱️ <strong>Bloques:</strong> 25 min estudio / 5 min descanso.</li>
+                                    <li>🔄 <strong>Repetición:</strong> Repasar antes de dormir (Theta).</li>
+                                </ul>
+                            </div>
+
+                            <button id="btn-generate-plan" class="btn-primary full-width">Generar Plan</button>
+                        </div>
+
+                        <button id="finish-chap-13" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Capacidad Aumentada. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 14: RELAJACIÓN PROGRESIVA -->
+                <section id="chapter-14-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 14: Sugestopedia</span>
+                        <h1>El Estudio de Grabación Mental</h1>
+                        <p class="hero-text">
+                            Reprograma tu biocomputadora usando música y tu propia voz.
+                            <br>Clave: Condicionamiento Heterogéneo ("Usted").
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: INDUCCIÓN ALFA (Respiración) -->
+                    <div class="lab-section">
+                        <h3>Paso 1: Inducción al Estado Alfa</h3>
+                        <p class="lab-desc">
+                            Sigue el círculo. Inhala cuando crezca. Exhala diciendo mentalmente <strong>"UNO"</strong> cuando se encoja.
+                        </p>
+                        
+                        <div class="meditation-container">
+                            <div id="breath-circle" class="breath-circle">
+                                <span id="breath-text">INHALA</span>
+                            </div>
+                            <button id="btn-start-meditation" class="btn-action">Iniciar Secuencia (10s)</button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: LA CONSOLA DE MEZCLAS (Transformador YO -> USTED) -->
+                    <div class="lab-section locked" id="studio-section">
+                        <div class="lock-overlay" id="lock-14-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Paso 2: Grabación de Cinta</h3>
+                        <p class="lab-desc">
+                            Escribe tu meta como "YO". El sistema la convertirá a "USTED" para máxima penetración subconsciente.
+                        </p>
+
+                        <div class="studio-console">
+                            <div class="input-channel">
+                                <label>Tu Pensamiento (Consciente):</label>
+                                <input type="text" id="tape-input" class="console-input" placeholder="Ej: Yo soy disciplinado..." autocomplete="off">
+                            </div>
+
+                            <div class="arrow-down">⬇️ PROCESANDO HETERO-SUGESTIÓN ⬇️</div>
+
+                            <div class="output-channel">
+                                <label>Tu Grabación (Subconsciente):</label>
+                                <div id="tape-output" class="console-screen">Esperando señal...</div>
+                            </div>
+
+                            <button id="btn-record" class="btn-record">🔴 GRABAR EN CINTA</button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: EL REPRODUCTOR (Cassette) -->
+                    <div class="lab-section locked" id="player-section">
+                        <div class="lock-overlay" id="lock-14-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Paso 3: Reproducción Diaria</h3>
+                        <p class="lab-desc">Escucha esto dos veces al día. Tu voz es la orden.</p>
+
+                        <div class="cassette-player">
+                            <div class="cassette">
+                                <div class="reel left"></div>
+                                <div class="reel right"></div>
+                                <div class="tape-label">
+                                    <span>MASTER PROGRAM</span>
+                                    <span id="tape-content-preview" style="font-size: 0.7rem; display:block; margin-top:5px; color:#333;">...</span>
+                                </div>
+                            </div>
+                            <div class="player-controls">
+                                <button class="control-btn play" id="btn-play-tape">▶ REPRODUCIR</button>
+                            </div>
+                            <div class="music-waves hidden" id="music-waves">
+                                <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                            </div>
+                        </div>
+
+                        <button id="finish-chap-14" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Cinta Guardada. Finalizar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 15: METAS -->
+                <section id="chapter-15-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 15: Arquitectura de Vida</span>
+                        <h1>5 Claves para Establecer Metas</h1>
+                        <p class="hero-text">
+                            "El éxito son las metas. Todo lo demás son comentarios."
+                            <br>Activa el Mecanismo de Éxito Cibernético.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: ÁREA DE EXCELENCIA (Diagrama de Venn Interactivo) -->
+                    <div class="lab-section">
+                        <h3>Clave 2: Tu Área de Excelencia</h3>
+                        <p class="lab-desc">Mueve los círculos. Donde convergen Atención, Interés y Absorción, está tu talento.</p>
+                        
+                        <div class="venn-container">
+                            <div id="venn-1" class="venn-circle c1">ATENCIÓN</div>
+                            <div id="venn-2" class="venn-circle c2">INTERÉS</div>
+                            <div id="venn-3" class="venn-circle c3">ABSORCIÓN</div>
+                            <div id="venn-center" class="venn-center hidden">EL PUNTO DULCE</div>
+                        </div>
+                        
+                        <div class="venn-controls">
+                            <input type="range" id="venn-slider" min="0" max="100" value="0">
+                            <p>Alineación: <span id="venn-val">0</span>%</p>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: ACRES DE DIAMANTES (Excavación) -->
+                    <div class="lab-section locked" id="diamond-section">
+                        <div class="lock-overlay" id="lock-15-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Clave 3: Acres de Diamantes</h3>
+                        <p class="lab-desc">
+                            No busques lejos. La oportunidad está bajo tus pies, disfrazada de trabajo duro.
+                            <br>Haz clic en el terreno para excavar.
+                        </p>
+
+                        <div class="mining-field" id="mining-field">
+                            <!-- JS generará bloques de tierra aquí -->
+                        </div>
+                        <p id="mining-status" class="feedback-text">Estado: Buscando oportunidad...</p>
+                    </div>
+
+                    <!-- FASE 3: EL TEST DE FUEGO (30 Segundos) -->
+                    <div class="lab-section locked" id="test-section">
+                        <div class="lock-overlay" id="lock-15-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>El Test de Cristalización</h3>
+                        <p class="lab-desc">
+                            Tienes 30 segundos por pregunta. No pienses, solo escribe. Tu subconsciente sabe la respuesta.
+                        </p>
+
+                        <div class="rapid-fire-box">
+                            <div class="timer-display" id="timer-display">30</div>
+                            
+                            <div id="question-container">
+                                <h4 id="question-text">Pregunta 1...</h4>
+                                <textarea id="answer-input" class="modal-input" placeholder="Escribe rápido..."></textarea>
+                            </div>
+
+                            <button id="btn-start-test" class="btn-primary full-width">INICIAR TEST RÁPIDO</button>
+                            <button id="btn-next-q" class="btn-action hidden">Siguiente ></button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 4: PROPÓSITO DEFINIDO (Tarjeta Final) -->
+                    <div class="lab-section locked" id="ppd-section">
+                        <div class="lock-overlay" id="lock-15-4"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Tu Propósito Principal Definido (PPD)</h3>
+                        <p class="lab-desc">Basado en tus respuestas, define TU META MAYOR ahora.</p>
+
+                        <div class="gold-card">
+                            <div class="card-header">CERTIFICADO DE DESTINO</div>
+                            <textarea id="ppd-input" placeholder="Yo, [Nombre], me comprometo a lograr..."></textarea>
+                            <div class="card-footer">FECHA LÍMITE: <input type="date" id="ppd-date"></div>
+                        </div>
+
+                        <button id="finish-chap-15" class="btn-primary full-width" style="margin-top: 2rem;">
+                            Sellar Destino y Guardar
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 16: 12 PASOS -->
+                <section id="chapter-16-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 16: Protocolo de Ejecución</span>
+                        <h1>Secuencia de Lanzamiento</h1>
+                        <p class="hero-text">
+                            No reinventes la rueda. Usa este sistema probado de 12 pasos.
+                            <br>Completa cada fase para iniciar la propulsión.
+                        </p>
+                    </header>
+
+                    <!-- BARRA DE PROGRESO DE LA MISIÓN -->
+                    <div class="mission-progress">
+                        <div class="mission-step active" id="m-step-1">1. Ignición</div>
+                        <div class="mission-step" id="m-step-2">2. Navegación</div>
+                        <div class="mission-step" id="m-step-3">3. Blindaje</div>
+                        <div class="mission-step" id="m-step-4">4. Despegue</div>
+                    </div>
+
+                    <!-- CONTENEDOR DEL WIZARD -->
+                    <div class="launch-pad">
+                        
+                        <!-- FASE 1: IGNICIÓN -->
+                        <div class="phase-group" id="phase-1">
+                            <h3>Fase 1: El Motor Interno</h3>
+                            
+                            <div class="input-card">
+                                <label>1. Deseo (Ardiente y Personal)</label>
+                                <p class="hint">¿Qué quieres REALMENTE? (No lo que otros quieren para ti)</p>
+                                <input type="text" id="c16-desire" class="modal-input" placeholder="Mi deseo ardiente es...">
+                            </div>
+
+                            <div class="input-card">
+                                <label>2. Creencia (Factor Fe)</label>
+                                <p class="hint">¿Es realista para ti? ¿Puedes verlo?</p>
+                                <div class="belief-slider-container">
+                                    <input type="range" id="c16-belief" min="0" max="100" value="50">
+                                    <span id="belief-val">50% Creencia</span>
+                                </div>
+                            </div>
+
+                            <div class="input-card">
+                                <label>3. Escritura (Cristalización)</label>
+                                <p class="hint">Escríbelo como un hecho cumplido.</p>
+                                <textarea id="c16-write" class="modal-input" placeholder="Yo he logrado..."></textarea>
+                            </div>
+
+                            <button class="btn-action" onclick="nextPhase(2)">Inicializar Fase 2</button>
+                        </div>
+
+                        <!-- FASE 2: NAVEGACIÓN (Oculta) -->
+                        <div class="phase-group hidden" id="phase-2">
+                            <div class="law-alert">
+                                <span class="icon">⚖️</span> 
+                                <strong>Ley de Compensación:</strong> Siempre serás compensado en igual medida por lo que haces.
+                            </div>
+
+                            <h3>Fase 2: Coordenadas</h3>
+
+                            <div class="input-card">
+                                <label>4. ¿Por qué lo quieres? (Combustible)</label>
+                                <textarea id="c16-why" class="modal-input" placeholder="Lo quiero porque..."></textarea>
+                            </div>
+
+                            <div class="input-card">
+                                <label>5. Punto de Partida (Análisis)</label>
+                                <textarea id="c16-start" class="modal-input" placeholder="Mi situación actual es... Mis debilidades son..."></textarea>
+                            </div>
+
+                            <div class="input-card">
+                                <label>6. Límite Temporal</label>
+                                <input type="date" id="c16-deadline" class="modal-input">
+                            </div>
+
+                            <button class="btn-action" onclick="nextPhase(3)">Inicializar Fase 3</button>
+                        </div>
+
+                        <!-- FASE 3: BLINDAJE (Oculta) -->
+                        <div class="phase-group hidden" id="phase-3">
+                            <div class="law-alert">
+                                <span class="icon">🤝</span> 
+                                <strong>Ley del Servicio:</strong> Tu recompensa es igual al valor de tu servicio a otros.
+                            </div>
+
+                            <h3>Fase 3: Gestión de Riesgos</h3>
+
+                            <div class="input-card">
+                                <label>7. Obstáculos (La Roca)</label>
+                                <p class="hint">¿Qué se interpone entre tú y la meta?</p>
+                                <input type="text" id="c16-obstacle" class="modal-input" placeholder="El obstáculo mayor es...">
+                            </div>
+
+                            <div class="input-card">
+                                <label>8. Conocimiento Necesario</label>
+                                <input type="text" id="c16-knowledge" class="modal-input" placeholder="Necesito aprender sobre...">
+                            </div>
+
+                            <div class="input-card">
+                                <label>9. Tu Cliente (QHEEPM)</label>
+                                <p class="hint">¿A quién debes satisfacer? ¿Qué Hay En Ello Para Mí?</p>
+                                <input type="text" id="c16-people" class="modal-input" placeholder="Necesito la ayuda de...">
+                            </div>
+
+                            <button class="btn-action" onclick="nextPhase(4)">Inicializar Fase 4</button>
+                        </div>
+
+                        <!-- FASE 4: DESPEGUE (Oculta) -->
+                        <div class="phase-group hidden" id="phase-4">
+                            <div class="law-alert">
+                                <span class="icon">🚀</span> 
+                                <strong>Ley de Sobrecompensación:</strong> Haz siempre más de lo que te pagan.
+                            </div>
+
+                            <h3>Fase 4: Ejecución</h3>
+
+                            <div class="input-card">
+                                <label>10. El Plan Maestro</label>
+                                <p class="hint">Lista de actividades prioritarias.</p>
+                                <textarea id="c16-plan" class="modal-input" placeholder="1. Primero haré..."></textarea>
+                            </div>
+
+                            <div class="input-card">
+                                <label>11. Visualización</label>
+                                <button id="btn-visualize-16" class="btn-magnet full-width">EJECUTAR SIMULACIÓN MENTAL (5s)</button>
+                            </div>
+
+                            <div class="input-card">
+                                <label>12. Persistencia (El Contrato)</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="c16-persistence">
+                                    <label for="c16-persistence">Prometo JAMÁS darme por vencido.</label>
+                                </div>
+                            </div>
+
+                            <button id="finish-chap-16" class="btn-primary full-width hidden">
+                                LANZAR COHETE (Guardar Meta)
+                            </button>
+                        </div>
+
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 17: TIEMPO Y PRODUCTIVIDAD -->
+                <section id="chapter-17-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 17: Control Maestro</span>
+                        <h1>Estrategias de Tiempo</h1>
+                        <p class="hero-text">
+                            El tiempo es la materia de la vida. <br>
+                            No puedes gestionar el tiempo, solo puedes gestionarte a ti mismo.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: LEY DE PARETO (80/20) -->
+                    <div class="lab-section">
+                        <h3>La Regla del 80/20</h3>
+                        <p class="lab-desc">
+                            El 20% de tus actividades generan el 80% de tus resultados.
+                            <br>Identifica lo vital. Ignora lo trivial.
+                        </p>
+                        
+                        <div class="pareto-visualizer" id="pareto-container">
+                            <!-- JS generará 10 bloques aquí -->
+                        </div>
+                        <button class="btn-action" onclick="applyPareto()">Aplicar Filtro 80/20</button>
+                    </div>
+
+                    <!-- FASE 2: MATRIZ ABCDE (Gestión de Tareas) -->
+                    <div class="lab-section locked" id="abcde-section">
+                        <div class="lock-overlay" id="lock-17-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>El Sistema ABCDE</h3>
+                        <p class="lab-desc">
+                            1. Escribe todo lo que tienes que hacer (Barrido Mental).<br>
+                            2. Asigna una letra a cada tarea.
+                        </p>
+
+                        <div class="task-manager">
+                            <div class="task-input-row">
+                                <input type="text" id="new-task-input" class="modal-input" placeholder="Nueva tarea..." autocomplete="off">
+                                <button class="btn-add" onclick="addTaskToList()">+</button>
+                            </div>
+
+                            <div class="tasks-container" id="tasks-list">
+                                <p class="empty-msg">Tu lista está vacía. Descarga tu mente aquí.</p>
+                                <!-- Aquí se inyectarán las tareas -->
+                            </div>
+
+                            <div class="abcde-legend hidden" id="abcde-legend">
+                                <span class="badge-a">A: Vital (Sapo)</span>
+                                <span class="badge-b">B: Importante</span>
+                                <span class="badge-c">C: Deseable</span>
+                                <span class="badge-d">D: Delegar</span>
+                                <span class="badge-e">E: Eliminar</span>
+                            </div>
+
+                            <button id="btn-sort-tasks" class="btn-primary full-width hidden" onclick="sortTasksABCDE()">
+                                ORGANIZAR POR PRIORIDAD
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: ANTI-DILACIÓN (Hazlo Ahora) -->
+                    <div class="lab-section locked" id="procrastination-section">
+                        <div class="lock-overlay" id="lock-17-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>El Destructor de Dilación</h3>
+                        <p class="lab-desc">
+                            ¿Sientes resistencia? Usa la afirmación de poder para arrancar el motor.
+                        </p>
+
+                        <div class="do-it-now-box">
+                            <h1 id="mantra-display">ESPERANDO ORDEN...</h1>
+                            <button id="btn-do-it" class="btn-urgent">¡ROMPER INERCIA!</button>
+                        </div>
+
+                        <button id="finish-chap-17" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Planificación Completada. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 18: PODER MENTAL -->
+                <section id="chapter-18-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 18: Neuro-Plasticidad</span>
+                        <h1>Cómo Duplicar su Poder Mental</h1>
+                        <p class="hero-text">
+                            A los 2 años, el 94% somos genios creativos. A los 7 años, solo el 4%.
+                            <br>Vamos a reactivar ese potencial dormido.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: MULTIPLES INTELIGENCIAS (Gardner) -->
+                    <div class="lab-section">
+                        <h3>Tu Tipo de Genialidad</h3>
+                        <p class="lab-desc">
+                            La escuela solo mide Verbal y Matemática. <br>
+                            Selecciona tus áreas fuertes reales:
+                        </p>
+                        
+                        <div class="intelligence-grid">
+                            <div class="intel-card" onclick="toggleIntel(this, 'verbal')">🗣️ Verbal</div>
+                            <div class="intel-card" onclick="toggleIntel(this, 'matematica')">➗ Matemática</div>
+                            <div class="intel-card" onclick="toggleIntel(this, 'espacial')">🎨 Espacial/Artística</div>
+                            <div class="intel-card" onclick="toggleIntel(this, 'fisica')">🏃 Kinestésica/Física</div>
+                            <div class="intel-card" onclick="toggleIntel(this, 'musical')">🎵 Musical</div>
+                            <div class="intel-card" onclick="toggleIntel(this, 'social')">🤝 Social (Líder)</div>
+                            <div class="intel-card" onclick="toggleIntel(this, 'intrapersonal')">🧘 Intuitiva</div>
+                            <div class="intel-card" onclick="toggleIntel(this, 'emprendedora')">🚀 Emprendedora</div>
+                        </div>
+                        <p id="intel-feedback" class="feedback-text">Selecciona al menos una...</p>
+                    </div>
+
+                    <!-- FASE 2: TEST DE FLEXIBILIDAD (Mecánica vs Adaptable) -->
+                    <div class="lab-section locked" id="flexibility-section">
+                        <div class="lock-overlay" id="lock-18-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Diagnóstico: ¿Mecánico o Adaptable?</h3>
+                        <p class="lab-desc">
+                            Califica del 1 al 10 qué tan fácil te resulta decir estas frases.
+                            <br>(1 = Imposible, 10 = Muy fácil)
+                        </p>
+
+                        <div class="flexibility-test">
+                            
+                            <div class="slider-group">
+                                <label>1. "Me he equivocado" (Admitir error)</label>
+                                <input type="range" class="flex-slider" min="1" max="10" value="5" oninput="calcFlexibility()">
+                            </div>
+
+                            <div class="slider-group">
+                                <label>2. "He cambiado de opinión" (Flexibilidad)</label>
+                                <input type="range" class="flex-slider" min="1" max="10" value="5" oninput="calcFlexibility()">
+                            </div>
+
+                            <div class="slider-group">
+                                <label>3. "No lo sé" (Humildad)</label>
+                                <input type="range" class="flex-slider" min="1" max="10" value="5" oninput="calcFlexibility()">
+                            </div>
+
+                            <div class="slider-group">
+                                <label>4. "Necesito ayuda" (Colaboración)</label>
+                                <input type="range" class="flex-slider" min="1" max="10" value="5" oninput="calcFlexibility()">
+                            </div>
+
+                            <div class="flex-result">
+                                <p>Tu Personalidad es:</p>
+                                <h2 id="flex-score-text">MECÁNICA (Rígida)</h2>
+                                <div class="flex-bar-bg">
+                                    <div id="flex-bar" class="flex-bar-fill" style="width: 50%"></div>
+                                </div>
+                            </div>
+
+                            <button id="btn-confirm-flex" class="btn-action hidden" onclick="unlockGenius()">Confirmar Diagnóstico</button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: REACTIVACIÓN DEL GENIO -->
+                    <div class="lab-section locked" id="genius-section">
+                        <div class="lock-overlay" id="lock-18-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Reactivación Neuronal</h3>
+                        <p class="lab-desc">
+                            Usa la Ley de la Creatividad. Bombea la afirmación hasta despertar al niño genio.
+                        </p>
+
+                        <div class="genius-activator">
+                            <div class="brain-icon" id="brain-visual">🧠</div>
+                            <button id="btn-genius-pump" class="btn-magnet full-width">¡SOY UN GENIO!</button>
+                            <p id="genius-counter" class="counter-text">Repeticiones: 0/10</p>
+                        </div>
+
+                        <button id="finish-chap-18" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Potencial Duplicado. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 19: MENTE SÚPER CONSCIENTE -->
+                <section id="chapter-19-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 19: Conexión Universal</span>
+                        <h1>El Súper Consciente</h1>
+                        <p class="hero-text">
+                            Tienes acceso a una "Mente Mayor" las 24 horas. <br>
+                            Aprende a delegar problemas y recibir soluciones perfectas.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: EL MÉTODO MAESTRO (Soledad) -->
+                    <div class="lab-section">
+                        <h3>Activación por Soledad</h3>
+                        <p class="lab-desc">
+                            Siéntate en silencio absoluto. Sin música. Sin movimiento.
+                            <br>Escucha la voz tranquila dentro de ti.
+                        </p>
+                        
+                        <div class="void-chamber" id="void-chamber">
+                            <div class="void-core"></div>
+                            <p id="void-status">Haz clic para entrar al Vacío (30s)</p>
+                        </div>
+                        <p class="feedback-text hidden" id="void-feedback">Conexión establecida. La intuición está activa.</p>
+                    </div>
+
+                    <!-- FASE 2: DELEGACIÓN DE PROBLEMAS -->
+                    <div class="lab-section locked" id="delegation-section">
+                        <div class="lock-overlay" id="lock-19-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Buzón Súper Consciente</h3>
+                        <p class="lab-desc">
+                            Define tu problema claramente y envíalo.
+                            <br>La mente trabajará 24/7 mientras tú haces otra cosa.
+                        </p>
+
+                        <div class="cosmic-mailbox">
+                            <textarea id="problem-input" class="modal-input" placeholder="Define el problema aquí..."></textarea>
+                            <button class="btn-action" id="btn-delegate">📤 ENVIAR AL SÚPER CONSCIENTE</button>
+                        </div>
+                        
+                        <div id="processing-msg" class="hidden cosmic-msg">
+                            <span class="pulse-dot"></span> PROCESANDO EN SEGUNDO PLANO...
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: DETECTOR DE SEÑALES (Serendipia) -->
+                    <div class="lab-section locked" id="serendipity-section">
+                        <div class="lock-overlay" id="lock-19-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Radar de Sincronicidad</h3>
+                        <p class="lab-desc">
+                            Mantente alerta a encuentros fortuitos y destellos de intuición.
+                        </p>
+
+                        <div class="serendipity-radar">
+                            <div class="radar-scan"></div>
+                            <div class="signal hidden" id="signal-1" style="top: 20%; left: 30%;">✨ Idea</div>
+                            <div class="signal hidden" id="signal-2" style="top: 70%; left: 60%;">👥 Encuentro</div>
+                        </div>
+
+                        <button id="finish-chap-19" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Intuición Calibrada. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 20: SOLUCIÓN CREATIVA -->
+                <section id="chapter-20-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 20: Inteligencia Aplicada</span>
+                        <h1>Técnicas de Solución Creativa</h1>
+                        <p class="hero-text">
+                            La genialidad es claridad. <br>
+                            Aprende a forzar tu mente para que te dé las respuestas que necesitas.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: REENCUADRE (Lenguaje Positivo) -->
+                    <div class="lab-section">
+                        <h3>Paso 1: Cambio de Lenguaje</h3>
+                        <p class="lab-desc">Las palabras cambian tu química cerebral. Observa.</p>
+                        
+                        <div class="reframing-tool" id="reframing-box">
+                            <div class="word-display" id="word-display">PROBLEMA</div>
+                            <div class="word-controls">
+                                <button class="word-btn negative" onclick="setWord('PROBLEMA')">Problema</button>
+                                <button class="word-btn neutral" onclick="setWord('SITUACIÓN')">Situación</button>
+                                <button class="word-btn positive" onclick="setWord('DESAFÍO')">Desafío</button>
+                                <button class="word-btn golden" onclick="setWord('OPORTUNIDAD')">Oportunidad</button>
+                            </div>
+                            <p id="word-meaning" class="feedback-text">Algo con lo que se lucha. (Estrés alto)</p>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: TORMENTA MENTAL (20 Ideas) -->
+                    <div class="lab-section locked" id="storm-section">
+                        <div class="lock-overlay" id="lock-20-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Paso 2: El Método de las 20 Ideas</h3>
+                        <p class="lab-desc">
+                            Define tu meta como pregunta (Ej: "¿Cómo puedo doblar mis ingresos?").
+                            <br>Luego, fuérzate a encontrar 20 respuestas. La #20 te hará rico.
+                        </p>
+
+                        <div class="brainstorm-area">
+                            <div class="question-box">
+                                <label>Tu Pregunta Maestra:</label>
+                                <input type="text" id="storm-question" class="modal-input" placeholder="¿Cómo puedo...?" autocomplete="off">
+                            </div>
+
+                            <div class="ideas-counter">
+                                <div class="counter-circle">
+                                    <span id="ideas-count">0</span>/20
+                                </div>
+                                <p>Ideas Generadas</p>
+                            </div>
+
+                            <div class="idea-input-row">
+                                <input type="text" id="idea-input" class="modal-input" placeholder="Escribe una solución y presiona Enter..." autocomplete="off" disabled>
+                                <button id="btn-add-idea" class="btn-action" disabled>+</button>
+                            </div>
+
+                            <div class="ideas-list" id="ideas-list">
+                                <!-- Aquí caerán las ideas -->
+                            </div>
+                        </div>
+
+                        <button id="finish-chap-20" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Solución Encontrada. Actuar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 21: ENERGÍA Y SALUD -->
+                <section id="chapter-21-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 21: Bio-Ingeniería</span>
+                        <h1>El Bio-Reactor Humano</h1>
+                        <p class="hero-text">
+                            Tu cuerpo es el vehículo de tu mente. <br>
+                            Salud = Energía. Sin energía, el sistema colapsa.
+                        </p>
+                    </header>
+
+                    <!-- INDICADOR DE ESTADO (La Batería) -->
+                    <div class="energy-dashboard">
+                        <div class="battery-container">
+                            <div class="battery-head"></div>
+                            <div class="battery-body">
+                                <div id="battery-charge" class="battery-charge low"></div>
+                                <div class="battery-percentage" id="battery-text">20%</div>
+                            </div>
+                        </div>
+                        <p id="energy-status" class="feedback-text">ESTADO: CRÍTICO (Modo Supervivencia)</p>
+                    </div>
+
+                    <!-- FASE 1: IGNICIÓN (Las 5 D's) -->
+                    <div class="lab-section">
+                        <h3>Protocolo de Arranque (Las 5 D's)</h3>
+                        <p class="lab-desc">Activa la secuencia para comprometerte con la longevidad (+80 años).</p>
+                        
+                        <div class="ignition-switches">
+                            <button class="ignition-btn" onclick="toggleIgnition(this)">Deseo</button>
+                            <button class="ignition-btn" onclick="toggleIgnition(this)">Definición</button>
+                            <button class="ignition-btn" onclick="toggleIgnition(this)">Decisión</button>
+                            <button class="ignition-btn" onclick="toggleIgnition(this)">Determinación</button>
+                            <button class="ignition-btn" onclick="toggleIgnition(this)">Disciplina</button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: DESINTOXICACIÓN (Eliminar Venenos) -->
+                    <div class="lab-section locked" id="detox-section">
+                        <div class="lock-overlay" id="lock-21-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Cámara de Desintoxicación</h3>
+                        <p class="lab-desc">Elimina los "3 Venenos Blancos" tocándolos hasta que desaparezcan.</p>
+
+                        <div class="poisons-grid">
+                            <div class="poison-item" onclick="purgePoison(this)">
+                                <span class="icon">🧁</span>
+                                <h4>Azúcar</h4>
+                                <p>El asesino dulce</p>
+                            </div>
+                            <div class="poison-item" onclick="purgePoison(this)">
+                                <span class="icon">🧂</span>
+                                <h4>Sal</h4>
+                                <p>Retención y presión</p>
+                            </div>
+                            <div class="poison-item" onclick="purgePoison(this)">
+                                <span class="icon">🍞</span>
+                                <h4>Harina Blanca</h4>
+                                <p>Pegamento intestinal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: ECUALIZADOR DE VITALIDAD -->
+                    <div class="lab-section locked" id="vitality-section">
+                        <div class="lock-overlay" id="lock-21-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Ecualizador de Vitalidad</h3>
+                        <p class="lab-desc">Ajusta tus niveles para maximizar el flujo de energía.</p>
+
+                        <div class="sliders-container">
+                            <div class="control-group">
+                                <label>⚖️ Peso Adecuado (Visualización)</label>
+                                <input type="range" class="energy-slider" oninput="calcEnergy()" value="50">
+                            </div>
+                            <div class="control-group">
+                                <label>🥗 Dieta (70% Agua/Vegetales)</label>
+                                <input type="range" class="energy-slider" oninput="calcEnergy()" value="30">
+                            </div>
+                            <div class="control-group">
+                                <label>🏃 Ejercicio Aeróbico (Oxígeno)</label>
+                                <input type="range" class="energy-slider" oninput="calcEnergy()" value="20">
+                            </div>
+                            <div class="control-group">
+                                <label>💤 Descanso (7-8 Horas)</label>
+                                <input type="range" class="energy-slider" oninput="calcEnergy()" value="40">
+                            </div>
+                        </div>
+
+                        <button id="finish-chap-21" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Bio-Reactor al 100%. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 22: MENTE-CUERPO -->
+                <section id="chapter-22-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 22: Alquimia Interna</span>
+                        <h1>Relación Mente-Cuerpo</h1>
+                        <p class="hero-text">
+                            Tu cuerpo genera energía bruta. Tu mente la refina.
+                            <br>No la quemes en emociones negativas; úsala para crear.
+                        </p>
+                    </header>
+
+                    <!-- LA TORRE DE DESTILACIÓN -->
+                    <div class="lab-section">
+                        <div class="refinery-container">
+                            
+                            <!-- Nivel 4: Psíquica -->
+                            <div class="tank-level psychic">
+                                <div class="tank-label">4. Energía Psíquica (Creatividad)</div>
+                                <div class="liquid" id="liquid-psychic"></div>
+                                <div class="glow-effect hidden" id="psychic-glow"></div>
+                            </div>
+
+                            <!-- Tubería 3-4 -->
+                            <div class="pipe vertical"></div>
+
+                            <!-- Nivel 3: Mental -->
+                            <div class="tank-level mental">
+                                <div class="tank-label">3. Energía Mental (Pensamiento)</div>
+                                <div class="liquid" id="liquid-mental"></div>
+                            </div>
+
+                            <!-- Tubería 2-3 -->
+                            <div class="pipe vertical"></div>
+
+                            <!-- Nivel 2: Emocional (CON FUGA) -->
+                            <div class="tank-level emotional">
+                                <div class="tank-label">2. Energía Emocional (Sentimiento)</div>
+                                <div class="liquid" id="liquid-emotional"></div>
+                                
+                                <!-- La Fuga Visual -->
+                                <div id="leak-point" class="leak-point">
+                                    <div class="leak-spray">💨 NEGATIVIDAD</div>
+                                </div>
+                            </div>
+
+                            <!-- Tubería 1-2 -->
+                            <div class="pipe vertical"></div>
+
+                            <!-- Nivel 1: Física -->
+                            <div class="tank-level physical">
+                                <div class="tank-label">1. Energía Física (Calorías)</div>
+                                <div class="liquid" id="liquid-physical"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="refinery-controls">
+                            <button id="btn-generate-energy" class="btn-action">⚡ GENERAR ENERGÍA FÍSICA</button>
+                            <p id="refinery-status" class="feedback-text">Sistema en reposo...</p>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: KIT DE REPARACIÓN (Las Leyes) -->
+                    <div class="lab-section locked" id="repair-section">
+                        <div class="lock-overlay" id="lock-22-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Detectada Fuga en Nivel Emocional</h3>
+                        <p class="lab-desc">
+                            Estás quemando tu combustible en quejas y culpa. 
+                            <br>Aplica las leyes para sellar la fuga y elevar la energía.
+                        </p>
+
+                        <div class="patches-grid">
+                            <button class="patch-btn" onclick="applyPatch(this)">Ley de Sustitución</button>
+                            <button class="patch-btn" onclick="applyPatch(this)">Ley del Hábito</button>
+                            <button class="patch-btn" onclick="applyPatch(this)">Cero Culpa</button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: AMBIENTE POSITIVO -->
+                    <div class="lab-section locked" id="environment-section">
+                        <div class="lock-overlay" id="lock-22-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Aislamiento del Sistema</h3>
+                        <p class="lab-desc">Aleja las influencias negativas para mantener la presión.</p>
+
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="switch-isolate" onchange="checkIsolation()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label">ACTIVAR ESCUDO POSITIVO</span>
+
+                        <button id="finish-chap-22" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Refinería Optimizada. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 23: ESTRÉS Y TENSIÓN -->
+                <section id="chapter-23-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 23: Mantenimiento del Sistema</span>
+                        <h1>Cámara de Descompresión</h1>
+                        <p class="hero-text">
+                            El estrés es la fricción de la mente. <br>
+                            Identifica la causa, paga el precio y libera la presión.
+                        </p>
+                    </header>
+
+                    <!-- EL MANÓMETRO (Indicador Global) -->
+                    <div class="pressure-dashboard">
+                        <div class="gauge-container">
+                            <div class="gauge-body">
+                                <div class="gauge-fill" id="pressure-fill"></div>
+                                <div class="gauge-cover">
+                                    <span id="pressure-val">100</span> PSI
+                                </div>
+                                <div class="gauge-needle" id="pressure-needle"></div>
+                            </div>
+                        </div>
+                        <p id="pressure-status" class="feedback-text warning">ALERTA: PRESIÓN CRÍTICA</p>
+                    </div>
+
+                    <!-- FASE 1: TRANSFORMACIÓN TIPO A -> TIPO B -->
+                    <div class="lab-section">
+                        <h3>Recalibración de Personalidad</h3>
+                        <p class="lab-desc">
+                            El comportamiento Tipo A (Prisa/Agresividad) te está matando.
+                            <br>Cambia los interruptores hacia el Tipo B (Desempeño/Calma).
+                        </p>
+                        
+                        <div class="switch-board">
+                            <!-- Switch 1 -->
+                            <div class="personality-switch">
+                                <span class="type-a">Enfermedad de Prisa</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" class="behavior-toggle" onchange="checkPressure()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="type-b">Enfoque en Desempeño</span>
+                            </div>
+                            <!-- Switch 2 -->
+                            <div class="personality-switch">
+                                <span class="type-a">Inseguridad / Estatus</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" class="behavior-toggle" onchange="checkPressure()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="type-b">Seguridad Interna</span>
+                            </div>
+                            <!-- Switch 3 -->
+                            <div class="personality-switch">
+                                <span class="type-a">Agresividad / Ira</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" class="behavior-toggle" onchange="checkPressure()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="type-b">Relaciones / Calma</span>
+                            </div>
+                            <!-- Switch 4 -->
+                            <div class="personality-switch">
+                                <span class="type-a">Trabajo Compulsivo</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" class="behavior-toggle" onchange="checkPressure()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="type-b">Tiempo Libre / Balance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: ASUNTOS INCOMPLETOS (La Carta) -->
+                    <div class="lab-section locked" id="closure-section">
+                        <div class="lock-overlay" id="lock-23-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Cerrar Ciclos (Acción Incompleta)</h3>
+                        <p class="lab-desc">
+                            Nada genera más estrés que un ciclo abierto (relación o trabajo).
+                            <br>Escribe la carta de cierre ahora. (No tienes que enviarla real, pero sí mentalmente).
+                        </p>
+
+                        <div class="letter-container">
+                            <div class="paper">
+                                <div class="paper-header">CARTA DE LIBERACIÓN</div>
+                                <input type="text" id="letter-to" class="paper-line" placeholder="Para: (Nombre de la persona/situación)">
+                                <textarea id="letter-body" class="paper-body" placeholder="1. Acepto mi responsabilidad... 
+                2. Te perdono por... 
+                3. Te deseo bienestar..."></textarea>
+                            </div>
+                            <button class="btn-action" id="btn-send-letter">✉️ ENVIAR AL UNIVERSO (Quemar)</button>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: CONFRONTACIÓN DE NEGACIÓN -->
+                    <div class="lab-section locked" id="denial-section">
+                        <div class="lock-overlay" id="lock-23-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Romper la Negación</h3>
+                        <p class="lab-desc">
+                            ¿Qué estás evitando enfrentar? La verdad te hará libre.
+                        </p>
+
+                        <div class="reality-check">
+                            <p>La realidad es:</p>
+                            <input type="text" id="reality-input" class="modal-input" placeholder="Lo que no quiero admitir es...">
+                            <button class="btn-primary full-width" onclick="faceReality()">
+                                PAGAR EL PRECIO Y SOLTAR
+                            </button>
+                        </div>
+
+                        <button id="finish-chap-23" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Presión Normalizada. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 24: PERSONALIDAD DE ÉXITO -->
+                <section id="chapter-24-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 24: Inteligencia Social</span>
+                        <h1>El Reactor de Carisma</h1>
+                        <p class="hero-text">
+                            El 85% de tu éxito depende de tus relaciones. <br>
+                            Aplica la Ley del Esfuerzo Indirecto: Da lo que quieres recibir.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: DIAGNÓSTICO DE SALUD SOCIAL -->
+                    <div class="lab-section">
+                        <h3>Diagnóstico de Personalidad</h3>
+                        <p class="lab-desc">Calibra tus niveles actuales.</p>
+                        
+                        <div class="social-eq-container">
+                            <div class="eq-slider-group">
+                                <label>Auto-Opinión (¿Te agradas?)</label>
+                                <input type="range" class="social-slider" oninput="calcSocialBattery()">
+                            </div>
+                            <div class="eq-slider-group">
+                                <label>Nivel de Responsabilidad</label>
+                                <input type="range" class="social-slider" oninput="calcSocialBattery()">
+                            </div>
+                            <div class="eq-slider-group">
+                                <label>Capacidad de Perdonar</label>
+                                <input type="range" class="social-slider" oninput="calcSocialBattery()">
+                            </div>
+                            <div class="eq-slider-group">
+                                <label>Expectativas de Confianza</label>
+                                <input type="range" class="social-slider" oninput="calcSocialBattery()">
+                            </div>
+                            
+                            <div class="social-battery-display">
+                                <div class="battery-icon">
+                                    <div id="social-juice" class="battery-juice"></div>
+                                </div>
+                                <p id="social-status">Energía Magnética: BAJA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: LEY DEL ESFUERZO INDIRECTO -->
+                    <div class="lab-section locked" id="indirect-section">
+                        <div class="lock-overlay" id="lock-24-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Ley del Esfuerzo Indirecto</h3>
+                        <p class="lab-desc">
+                            ¿Cómo intentas ganar amigos? El enfoque directo falla. El indirecto triunfa.
+                        </p>
+
+                        <div class="magnet-experiment">
+                            <div class="magnet-controls">
+                                <button class="magnet-mode-btn" onclick="setMagnetMode('direct')">DIRECTO (Impresionar)</button>
+                                <button class="magnet-mode-btn" onclick="setMagnetMode('indirect')">INDIRECTO (Interesarse)</button>
+                            </div>
+                            
+                            <div class="magnet-visual" id="magnet-visual">
+                                <div class="user-dot">TÚ</div>
+                                <div class="others-dot">ELLOS</div>
+                                <div class="force-field" id="force-field"></div>
+                            </div>
+                            <p id="magnet-feedback" class="feedback-text">Selecciona un modo...</p>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: LAS 7 CLAVES (Entrenamiento) -->
+                    <div class="lab-section locked" id="seven-keys-section">
+                        <div class="lock-overlay" id="lock-24-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Gimnasio de Habilidades Sociales</h3>
+                        <p class="lab-desc">Entrena los músculos de la carisma.</p>
+
+                        <div class="social-gym">
+                            
+                            <!-- 1. ACEPTACIÓN (Sonrisa) -->
+                            <div class="gym-station">
+                                <h4>1. Aceptación (Sonrisa)</h4>
+                                <p>La sonrisa libera endorfinas y desarma.</p>
+                                <button id="btn-smile" class="gym-btn">😊 GENERAR SONRISA (Clic)</button>
+                            </div>
+
+                            <!-- 2. ATENCIÓN (Escucha Activa) -->
+                            <div class="gym-station">
+                                <h4>2. Atención (Escucha)</h4>
+                                <p>Mantén presionado para escuchar sin interrumpir.</p>
+                                <div class="listening-bar-bg">
+                                    <div id="listening-bar" class="listening-bar-fill"></div>
+                                </div>
+                                <button id="btn-listen" class="gym-btn">👂 MANTENER ESCUCHA</button>
+                            </div>
+
+                            <!-- 3. APRECIACIÓN (Gracias) -->
+                            <div class="gym-station">
+                                <h4>3. Apreciación (Gratitud)</h4>
+                                <p>Escribe una nota rápida de agradecimiento mental.</p>
+                                <input type="text" id="thanks-input" class="modal-input" placeholder="Gracias por...">
+                                <button id="btn-thanks" class="gym-btn small">Enviar</button>
+                            </div>
+
+                        </div>
+
+                        <div class="boomerang-container hidden" id="boomerang-container">
+                            <p>Has lanzado energía positiva. Espera el retorno...</p>
+                            <div class="boomerang-icon">🪃</div>
+                        </div>
+
+                        <button id="finish-chap-24" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                            Personalidad Magnética Activada. Guardar.
+                        </button>
+                    </div>
+
+                </section>
+                <!-- VISTA CAPÍTULO 25: RELACIONES SUPERIORES -->
+                <section id="chapter-25-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 25: Resonancia Armónica</span>
+                        <h1>Construyendo Relaciones Superiores</h1>
+                        <p class="hero-text">
+                            El éxito en casa precede al éxito en el mundo. <br>
+                            Aprende la física de la compatibilidad.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: SINTONIZADOR DE COMPATIBILIDAD -->
+                    <div class="lab-section">
+                        <h3>Calibración de Pareja</h3>
+                        <p class="lab-desc">
+                            <strong>Regla:</strong> Los VALORES deben ser iguales. El TEMPERAMENTO debe ser opuesto (Equilibrio).
+                            <br>Ajusta los sliders hasta lograr la <strong>Resonancia</strong>.
+                        </p>
+                        
+                        <div class="tuner-interface">
+                            <!-- Osciloscopio Visual -->
+                            <div class="oscilloscope">
+                                <div class="wave-trace" id="wave-trace"></div>
+                                <div class="resonance-status" id="res-status">SEÑAL: DISONANTE</div>
+                            </div>
+
+                            <div class="tuner-controls-row">
+                                <div class="control-knob-group">
+                                    <label>Valores (Deben coincidir)</label>
+                                    <input type="range" id="slider-values" min="0" max="100" value="0" oninput="checkResonance()">
+                                    <span>Tú vs Pareja</span>
+                                </div>
+                                
+                                <div class="control-knob-group">
+                                    <label>Temperamento (Opuestos)</label>
+                                    <input type="range" id="slider-temp" min="0" max="100" value="50" oninput="checkResonance()">
+                                    <span>Introvertido vs Extrovertido</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: LA PRUEBA DEL MEJOR AMIGO -->
+                    <div class="lab-section locked" id="friend-test-section">
+                        <div class="lock-overlay" id="lock-25-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Biometría: La Prueba del Mejor Amigo</h3>
+                        <p class="lab-desc">
+                            El enamoramiento pasa. El respeto queda. <br>
+                            Responde con brutal honestidad.
+                        </p>
+                        <div class="biometric-scanner">
+                            <div class="question-row">
+                                <p>1. ¿Es tu pareja la persona con la que más te gusta hablar?</p>
+                                <div class="yes-no-toggle">
+                                    <!-- Agregamos ', this' al final de la función -->
+                                    <button class="yn-btn" onclick="answerTest(1, true, this)">SÍ</button>
+                                    <button class="yn-btn" onclick="answerTest(1, false, this)">NO</button>
+                                </div>
+                            </div>
+                            <div class="question-row">
+                                <p>2. ¿Te ríes mucho con esta persona?</p>
+                                <div class="yes-no-toggle">
+                                    <button class="yn-btn" onclick="answerTest(2, true, this)">SÍ</button>
+                                    <button class="yn-btn" onclick="answerTest(2, false, this)">NO</button>
+                                </div>
+                            </div>
+                            <div class="question-row">
+                                <p>3. ¿Respetas profundamente su carácter?</p>
+                                <div class="yes-no-toggle">
+                                    <button class="yn-btn" onclick="answerTest(3, true, this)">SÍ</button>
+                                    <button class="yn-btn" onclick="answerTest(3, false, this)">NO</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ... aquí arriba está la pregunta 3 ... -->
+            
+                        <!-- ESTO ES LO QUE FALTABA: EL CONTENEDOR DE RESULTADOS -->
+                        <div id="test-result" class="test-result hidden">
+                            <h4 style="margin-bottom: 0.5rem">RESULTADO: <span id="res-text">...</span></h4>
+                            <p id="res-desc" style="margin-bottom: 1rem">...</p>
+                            
+                            <!-- El botón que el JS está buscando -->
+                            <button class="btn-action hidden" id="btn-proceed-25">Proceder a Comunicación</button>
+                        </div>
+
+                    <!-- Aquí se cierra el div class="biometric-scanner" -->
+                    </div>
+
+                    <!-- FASE 3: MANTENIMIENTO (Comunicación) -->
+                    <div class="lab-section locked" id="comm-section">
+                        <div class="lock-overlay" id="lock-25-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>El Puente de Comunicación</h3>
+                        <p class="lab-desc">
+                            La relación muere si se corta la señal. <br>
+                            <strong>Misión:</strong> Mantén la señal viva haciendo clic rítmicamente en "ESCUCHAR".
+                        </p>
+
+                        <div class="signal-bridge">
+                            <div class="signal-tower user">TÚ</div>
+                            <div class="signal-beam">
+                                <div id="signal-strength" class="signal-strength" style="width: 100%"></div>
+                            </div>
+                            <div class="signal-tower partner">ELLOS</div>
+                        </div>
+
+                        <button id="btn-maintain-signal" class="btn-primary full-width">
+                            🔊 ESCUCHAR ACTIVAMENTE (Clic Rápido)
+                        </button>
+                        <p id="signal-fail-msg" class="feedback-text hidden">Se perdió la señal. Reiniciando...</p>
+                    </div>
+
+                    <!-- BOTÓN FINAL -->
+                    <button id="finish-chap-25" class="btn-primary full-width hidden" style="margin-top: 2rem;">
+                        Relación Blindada. Guardar.
+                    </button>
+
+                </section>
+                <!-- VISTA CAPÍTULO 26: CRIANZA DE SUPER NIÑOS -->
+                <section id="chapter-26-view" class="chapter-view hidden">
+                    
+                    <header class="chapter-hero">
+                        <span class="chapter-tag">Módulo 26: Legado Genético</span>
+                        <h1>Cómo Criar Super Niños</h1>
+                        <p class="hero-text">
+                            Tu hijo es un proyecto de ingeniería humana. <br>
+                            Tu misión: Construir una autoestima a prueba de balas.
+                        </p>
+                    </header>
+
+                    <!-- FASE 1: DEFENSA (Escudo contra Crítica) -->
+                    <div class="lab-section">
+                        <h3>Protocolo de Defensa</h3>
+                        <p class="lab-desc">
+                            La crítica destructiva es veneno nuclear. <br>
+                            Activa el escudo para proteger el núcleo del niño.
+                        </p>
+                        
+                        <div class="defense-system">
+                            <div class="child-core">
+                                <div class="core-light">👶</div>
+                                <div id="shield-visual" class="shield"></div>
+                            </div>
+                            
+                            <div class="threat-zone">
+                                <span class="threat" id="threat-1">"Eres torpe"</span>
+                                <span class="threat" id="threat-2">"¡Cállate!"</span>
+                                <span class="threat" id="threat-3">"¿Por qué no eres como...?"</span>
+                            </div>
+
+                            <div class="shield-controls">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="switch-shield" onchange="toggleShield()">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="toggle-label">ACTIVAR AMOR INCONDICIONAL (Bloquear Crítica)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: NUTRICIÓN (Los 4 Ingredientes) -->
+                    <div class="lab-section locked" id="nutrition-section">
+                        <div class="lock-overlay" id="lock-26-2"><span class="lock-icon">🔒</span></div>
+                        
+                        <h3>Mezclador de Nutrientes</h3>
+                        <p class="lab-desc">
+                            El amor no es abstracto. Se compone de 4 acciones físicas.
+                            <br>Llena los tanques para hacer crecer la autoestima.
+                        </p>
+
+                        <div class="nutrient-mixer">
+                            <div class="growth-display">
+                                <div id="tree-growth" class="tree-growth">🌱</div>
+                                <div class="growth-bar-bg"><div id="growth-bar" class="growth-bar-fill"></div></div>
+                            </div>
+
+                            <div class="nutrients-grid">
+                                <button class="nutrient-btn" onclick="feedChild('visual')">
+                                    👁️ Contacto Visual
+                                </button>
+                                <button class="nutrient-btn" onclick="feedChild('physic')">
+                                    🤗 Contacto Físico
+                                </button>
+                                <button class="nutrient-btn" onclick="feedChild('attention')">
+                                    👂 Atención Centrada
+                                </button>
+                                <button class="nutrient-btn" onclick="feedChild('words')">
+                                    🗣️ "Te Amo / Tú Puedes"
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 3: EL GRAN REINICIO (Pedir Perdón) -->
+                    <div class="lab-section locked" id="reset-section">
+                        <div class="lock-overlay" id="lock-26-3"><span class="lock-icon">🔒</span></div>
+
+                        <h3>Protocolo de Reparación de Daños</h3>
+                        <p class="lab-desc">
+                            ¿Te equivocaste en el pasado? No importa. Puedes borrarlo hoy.
+                            <br>Comprométete con este guion sagrado.
+                        </p>
+
+                        <div class="apology-script">
+                            <p class="script-line">"Hijos, quiero pedirles perdón por haberlos criticado..."</p>
+                            <p class="script-line">"Prometo no volver a hacerlo..."</p>
+                            <p class="script-line">"Les doy permiso para recordármelo si fallo."</p>
+                            
+                            <button id="btn-sign-apology" class="btn-primary full-width">
+                                FIRMAR PACTO DE NO AGRESIÓN
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

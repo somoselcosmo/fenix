@@ -1,0 +1,112 @@
+/* --- CAPÍTULO 24: PERSONALIDAD --- */
+
+/* Ecualizador Social */
+.social-eq-container {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+@media (max-width: 600px) { .social-eq-container { grid-template-columns: 1fr; } }
+
+.eq-slider-group { margin-bottom: 1rem; }
+.eq-slider-group label { display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.3rem; }
+
+.social-slider {
+    width: 100%; height: 6px; background: #334155; border-radius: 3px;
+    outline: none; -webkit-appearance: none;
+}
+.social-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 16px; height: 16px; background: #fff; border-radius: 50%; cursor: pointer; box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.social-battery-display {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.battery-icon {
+    width: 60px; height: 120px;
+    border: 4px solid #fff; border-radius: 8px;
+    position: relative; padding: 4px;
+    display: flex; align-items: flex-end;
+}
+.battery-icon::before {
+    content: ''; position: absolute; top: -8px; left: 15px; width: 20px; height: 6px; background: #fff; border-radius: 2px 2px 0 0;
+}
+
+.battery-juice {
+    width: 100%; height: 20%; /* Dinámico */
+    background: #ef4444; border-radius: 4px;
+    transition: height 0.5s, background-color 0.5s;
+    box-shadow: 0 0 15px #ef4444;
+}
+
+#social-status { font-size: 0.7rem; margin-top: 0.5rem; text-align: center; font-weight: bold; }
+
+/* Experimento Imán */
+.magnet-experiment {
+    background: #0f172a; padding: 2rem; border-radius: 12px;
+    text-align: center; margin: 2rem 0;
+}
+
+.magnet-controls { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+
+.magnet-mode-btn {
+    background: transparent; border: 1px solid var(--text-secondary); color: var(--text-secondary);
+    padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; transition: 0.3s;
+}
+.magnet-mode-btn:hover { border-color: #fff; color: #fff; }
+.magnet-mode-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.magnet-visual {
+    height: 150px; position: relative;
+    display: flex; justify-content: center; align-items: center; gap: 50px;
+}
+
+.user-dot, .others-dot {
+    width: 50px; height: 50px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 0.8rem;
+    position: relative; z-index: 2; transition: 0.5s;
+}
+.user-dot { background: var(--accent); color: #fff; }
+.others-dot { background: #334155; color: #fff; }
+
+/* Efectos visuales de fuerza */
+.magnet-visual.repel .others-dot { transform: translateX(50px); background: #ef4444; }
+.magnet-visual.repel .user-dot { transform: translateX(-20px); }
+.magnet-visual.attract .others-dot { transform: translateX(-40px); background: #22c55e; }
+.magnet-visual.attract .user-dot { box-shadow: 0 0 30px var(--accent); }
+
+/* Gimnasio Social */
+.social-gym { display: grid; gap: 1.5rem; margin: 2rem 0; }
+
+.gym-station {
+    background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent);
+}
+.gym-station h4 { margin-bottom: 0.5rem; color: #fff; }
+
+.gym-btn {
+    background: #334155; color: #fff; border: none; padding: 0.8rem; width: 100%;
+    border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem; transition: 0.2s;
+}
+.gym-btn:active { transform: scale(0.95); }
+.gym-btn.small { width: auto; padding: 0.5rem 1.5rem; }
+
+/* Barra de Escucha */
+.listening-bar-bg { width: 100%; height: 8px; background: #000; border-radius: 4px; overflow: hidden; margin-top: 1rem; }
+.listening-bar-fill { width: 0%; height: 100%; background: #22c55e; transition: width 0.1s linear; }
+
+/* Boomerang */
+.boomerang-container { text-align: center; margin-top: 2rem; }
+.boomerang-icon {
+    font-size: 3rem; display: inline-block;
+    animation: boomerang-fly 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes boomerang-fly {
+    0% { transform: translateX(0) rotate(0deg) scale(1); }
+    50% { transform: translateX(100px) rotate(360deg) scale(0.5); }
+    100% { transform: translateX(0) rotate(720deg) scale(1); }
+}

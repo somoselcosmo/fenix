@@ -1,0 +1,118 @@
+/* --- CAPÍTULO 13: SUPER APRENDIZAJE --- */
+
+/* Sintonizador */
+.wave-tuner {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.wave-visualizer {
+    height: 100px;
+    background: #000;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.wave-line {
+    width: 200%;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    position: absolute;
+    left: 0;
+    animation: wave-move 2s linear infinite;
+}
+
+/* Animaciones de Frecuencia */
+.wave-visualizer.beta .wave-line {
+    animation: wave-move 0.5s linear infinite;
+    background: #ef4444; box-shadow: 0 0 10px #ef4444;
+    /* Simular onda rápida con clip-path o imagen de fondo sería ideal, pero usaremos velocidad */
+}
+.wave-visualizer.alfa .wave-line {
+    animation: wave-move 2s linear infinite;
+    background: #22c55e; box-shadow: 0 0 10px #22c55e;
+    height: 4px;
+}
+.wave-visualizer.theta .wave-line {
+    animation: wave-move 4s linear infinite;
+    background: #3b82f6; box-shadow: 0 0 10px #3b82f6;
+}
+.wave-visualizer.delta .wave-line {
+    animation: wave-move 8s linear infinite;
+    background: #64748b;
+}
+
+@keyframes wave-move {
+    0% { transform: translateX(0) scaleY(1); }
+    25% { transform: translateX(-25%) scaleY(2); }
+    50% { transform: translateX(-50%) scaleY(1); }
+    75% { transform: translateX(-75%) scaleY(2); }
+    100% { transform: translateX(-100%) scaleY(1); }
+}
+
+.tuner-controls input[type=range] {
+    direction: rtl; /* Para que Beta esté a la derecha (alto) y Delta a la izquierda */
+}
+
+.freq-labels {
+    display: flex; justify-content: space-between;
+    font-size: 0.7rem; color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.wave-info {
+    background: rgba(255,255,255,0.05);
+    padding: 1rem; border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+.wave-info.active { border-color: var(--accent); background: rgba(249, 115, 22, 0.1); }
+
+/* Audio Player */
+.audio-player-ui {
+    background: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex; flex-direction: column; gap: 1rem;
+    align-items: center;
+    border: 1px solid #333;
+}
+
+.track-info { display: flex; align-items: center; gap: 0.5rem; color: #aaa; font-size: 0.9rem; }
+
+.memory-box {
+    margin-top: 2rem;
+    height: 150px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: radial-gradient(circle, #1e293b 0%, #000 100%);
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    animation: pulse-alfa 4s infinite;
+}
+
+.word-flash {
+    font-size: 2rem; font-weight: bold; color: #fff;
+    animation: fadeWord 3s infinite;
+}
+
+@keyframes fadeWord { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+@keyframes pulse-alfa { 0% { box-shadow: 0 0 10px rgba(34, 197, 94, 0.1); } 50% { box-shadow: 0 0 30px rgba(34, 197, 94, 0.3); } 100% { box-shadow: 0 0 10px rgba(34, 197, 94, 0.1); } }
+
+/* Study Plan */
+.study-plan {
+    background: #0f172a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent);
+    text-align: left;
+}
+.study-plan ul { list-style: none; padding: 0; margin-top: 1rem; }
+.study-plan li { margin-bottom: 0.5rem; font-size: 0.9rem; color: #e2e8f0; }

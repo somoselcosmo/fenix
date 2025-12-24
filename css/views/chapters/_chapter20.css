@@ -1,0 +1,101 @@
+/* --- CAPÍTULO 20: SOLUCIÓN DE PROBLEMAS --- */
+
+/* Reencuadre */
+.reframing-tool {
+    text-align: center;
+    padding: 2rem;
+    background: #2a0a0a; /* Rojo oscuro por defecto (Problema) */
+    border-radius: 12px;
+    border: 2px solid #ef4444;
+    transition: all 0.5s ease;
+    margin-bottom: 2rem;
+}
+
+.word-display {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.word-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.word-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.word-btn:hover { transform: scale(1.05); background: rgba(255,255,255,0.2); }
+
+/* Estados del Reencuadre */
+.reframing-tool.state-problem { background: #2a0a0a; border-color: #ef4444; }
+.reframing-tool.state-situation { background: #1e293b; border-color: #94a3b8; }
+.reframing-tool.state-challenge { background: #0f172a; border-color: #3b82f6; }
+.reframing-tool.state-opportunity { background: #064e3b; border-color: #22c55e; box-shadow: 0 0 30px rgba(34, 197, 94, 0.2); }
+
+/* Tormenta Mental */
+.brainstorm-area {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.ideas-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.counter-circle {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 4px solid #334155;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 1.5rem; font-weight: bold;
+    color: #334155;
+    background: #0f172a;
+    transition: 0.3s;
+}
+
+.counter-circle.active { border-color: var(--accent); color: #fff; box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
+.counter-circle.complete { border-color: #22c55e; color: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+
+.idea-input-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
+
+.ideas-list {
+    display: flex;
+    flex-direction: column-reverse; /* Las nuevas arriba */
+    gap: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.idea-item {
+    background: rgba(255,255,255,0.05);
+    padding: 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    gap: 1rem;
+    animation: slideDown 0.3s ease;
+}
+
+.idea-num { font-weight: bold; color: var(--accent); min-width: 25px; }
+.idea-text { color: #e2e8f0; }
+
+/* Dificultad visual */
+.idea-item.hard { border-left: 3px solid #f59e0b; } /* Ideas 11-19 */
+.idea-item.gold { border-left: 3px solid #ffd700; background: rgba(255, 215, 0, 0.1); } /* Idea 20 */

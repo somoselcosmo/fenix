@@ -1,0 +1,123 @@
+/* --- CAPÍTULO 12: SOFTWARE MENTAL --- */
+
+/* La Terminal */
+.cmd-terminal {
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    margin: 2rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    border: 1px solid #333;
+}
+
+.cmd-header {
+    background: #2d2d2d;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cmd-dot { width: 10px; height: 10px; border-radius: 50%; }
+.cmd-dot.red { background: #ff5f56; }
+.cmd-dot.yellow { background: #ffbd2e; }
+.cmd-dot.green { background: #27c93f; }
+.cmd-title { color: #999; font-size: 0.8rem; margin-left: 1rem; }
+
+.cmd-body { padding: 1.5rem; color: #fff; min-height: 150px; }
+.cmd-line { margin-bottom: 0.5rem; color: #aaa; }
+.prompt { color: #22c55e; margin-right: 0.5rem; }
+
+.cmd-input-area { display: flex; align-items: center; }
+.cmd-input-area input {
+    background: transparent; border: none; color: #fff;
+    width: 100%; font-family: inherit; font-size: 1rem;
+    outline: none;
+}
+
+.cmd-feedback { color: var(--accent); margin-top: 1rem; font-weight: bold; }
+
+/* El Disco (Freno) */
+.turntable-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.disk {
+    width: 150px; height: 150px;
+    background: radial-gradient(circle, #333 10%, #111 11%, #111 40%, #333 41%, #333 42%, #111 43%);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 2px solid #444;
+}
+
+.disk.spinning { animation: spin-disk 0.5s linear infinite; }
+.disk.stopped { transform: scale(0.95); transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+@keyframes spin-disk { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.disk-label {
+    background: #ef4444; color: white;
+    padding: 0.5rem 1rem; border-radius: 4px;
+    font-size: 0.7rem; font-weight: bold;
+}
+
+.btn-stop {
+    background: #ef4444; color: white;
+    border: none; padding: 1rem 3rem;
+    font-size: 1.5rem; font-weight: 900;
+    border-radius: 8px; cursor: pointer;
+    box-shadow: 0 5px 0 #b91c1c;
+    transition: 0.1s;
+}
+.btn-stop:active { transform: translateY(5px); box-shadow: none; }
+
+/* Ley de Relajación (El Orbe) */
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.flow-orb {
+    width: 100px; height: 100px;
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    cursor: grab;
+    transition: all 0.5s ease;
+    border: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+.flow-orb:hover {
+    background: rgba(59, 130, 246, 0.4);
+}
+
+.flow-orb.flowing {
+    transform: scale(1.5);
+    background: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.8);
+    border-color: #fff;
+}
+
+.flow-bar-bg {
+    width: 200px; height: 6px;
+    background: #333; border-radius: 3px;
+    margin: 2rem 0 1rem 0; overflow: hidden;
+}
+
+.flow-bar-fill {
+    height: 100%; width: 0%;
+    background: #3b82f6;
+    transition: width 0.1s linear;
+}
+
+#flow-status { font-size: 0.9rem; color: #94a3b8; }

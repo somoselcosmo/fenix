@@ -1,0 +1,22 @@
+/* Reset y Utilidades Básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Tipografía Base */
+h1 { font-size: 3rem; line-height: 1.1; margin: 1rem 0; }
+p { color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem; }

@@ -1,0 +1,108 @@
+/* --- CAPÍTULO 5: RESPONSABILIDAD --- */
+
+/* El Manifiesto (Papel Solemne) */
+.manifesto-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.manifesto-paper {
+    background: #e2e8f0; /* Papel grisáceo/blanco */
+    color: #1e293b;
+    padding: 3rem;
+    max-width: 650px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    font-family: 'Georgia', serif; /* Fuente con serifa para seriedad */
+    line-height: 1.8;
+    position: relative;
+    border-top: 5px solid var(--accent);
+}
+
+.manifesto-paper h3 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 1rem;
+}
+
+.manifesto-paper p {
+    color: #334155;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.warning-text {
+    font-weight: bold;
+    color: #b91c1c !important; /* Rojo oscuro */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Grid de Excusas */
+.excuses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.excuse-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.excuse-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Animación de destrucción */
+.excuse-btn.destroyed {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.counter-text {
+    text-align: center;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+/* Mantra Input */
+.mantra-target {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.1); /* Fantasma */
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+.mantra-field {
+    font-size: 1.5rem !important;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.mantra-feedback {
+    height: 5px;
+    background: #334155;
+    margin-top: 1rem;
+    width: 0%;
+    transition: width 0.2s, background 0.2s;
+    border-radius: 5px;
+}

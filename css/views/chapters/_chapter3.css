@@ -1,0 +1,35 @@
+/* Capítulo 3: PHI y Reactor */
+.lab-section { background: #1e293b; border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; position: relative; overflow: hidden; }
+.lab-desc { color: var(--text-secondary); text-align: center; margin-bottom: 2rem; font-size: 0.95rem; }
+.formula-visual { font-family: monospace; font-size: 2rem; text-align: center; margin: 1.5rem 0; font-weight: 700; }
+.formula-visual .highlight { color: var(--accent); font-size: 2.5rem; }
+.formula-visual .result { color: #22c55e; }
+.phi-calculator { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+@media (max-width: 768px) { .phi-calculator { grid-template-columns: 1fr; } }
+.control-group { margin-bottom: 1.5rem; }
+.control-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.attitude-group label { color: var(--accent); }
+.attitude-group input::-webkit-slider-thumb { background: var(--accent); box-shadow: 0 0 15px var(--accent); }
+.phi-meter { width: 100%; height: 30px; background: #0f172a; border-radius: 15px; overflow: hidden; border: 1px solid #334155; margin-bottom: 1rem; }
+.phi-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e); transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.result-display { text-align: center; }
+#phi-value { font-size: 4rem; margin: 0; line-height: 1; }
+#phi-message { font-size: 0.9rem; margin-top: 0.5rem; min-height: 1.2em; }
+
+/* Reactor */
+.reactor-core { display: flex; justify-content: center; margin: 3rem 0; }
+.circle { border-radius: 50%; display: flex; justify-content: center; align-items: center; position: relative; border: 2px dashed rgba(255,255,255,0.1); transition: all 0.3s; }
+.circle.ideal { width: 300px; height: 300px; background: rgba(15, 23, 42, 0.5); }
+.circle.image { width: 220px; height: 220px; background: rgba(30, 41, 59, 0.5); }
+.circle.esteem { width: 140px; height: 140px; background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(0,0,0,0) 70%); border-color: var(--accent); box-shadow: 0 0 30px rgba(249, 115, 22, 0.1); }
+.circle .label { position: absolute; top: 10px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); }
+.pump-btn { width: 80px; height: 80px; border-radius: 50%; border: none; background: var(--accent); color: white; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); animation: pulse-orange 2s infinite; transition: transform 0.1s; z-index: 10; }
+.pump-btn:active { transform: scale(0.9); }
+.pump-icon { font-size: 1.5rem; } .pump-text { font-size: 0.6rem; font-weight: 800; margin-top: 2px; }
+.pump-effect { animation: pump-shockwave 0.5s ease-out; }
+@keyframes pump-shockwave { 0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); } 100% { box-shadow: 0 0 0 50px rgba(249, 115, 22, 0); } }
+@keyframes pulse-orange { 0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); } 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); } }
+.energy-bar-bg { width: 100%; max-width: 400px; height: 10px; background: #0f172a; border-radius: 5px; margin: 1rem auto; overflow: hidden; }
+.energy-bar-fill { height: 100%; width: 0%; background: var(--accent); transition: width 0.2s; }
+.instruction-blink { font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem; animation: text-pulse 2s infinite; }
+@keyframes text-pulse { 50% { opacity: 0.5; } }

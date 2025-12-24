@@ -1,0 +1,122 @@
+/* --- CAPÍTULO 10: INGENIERÍA DEL YO --- */
+
+/* Gap Analyzer */
+.gap-analyzer {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.gap-visual {
+    position: relative;
+    height: 100px;
+    background: #0f172a;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.gap-point {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 0.6rem; font-weight: bold; text-align: center;
+    position: absolute;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.gap-point.image { background: #334155; left: 10%; color: #94a3b8; }
+.gap-point.ideal { background: var(--accent); left: 90%; color: white; box-shadow: 0 0 20px var(--accent); }
+
+.gap-line {
+    position: absolute;
+    top: 50%; left: 10%;
+    height: 2px;
+    background: #475569;
+    width: 80%;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+/* VAVA Steps */
+.vava-step {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: 0.3s;
+}
+
+.vava-step.locked-step {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(1);
+}
+
+.step-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.step-icon { font-size: 1.5rem; }
+.step-header h4 { margin: 0; color: #fff; }
+
+/* Input Code Style */
+.code-input {
+    font-family: monospace;
+    background: #000;
+    border: 1px solid #333;
+    color: #00ff00;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.error-msg {
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    font-family: monospace;
+}
+
+/* El Espejo */
+.mirror-frame {
+    width: 150px; height: 150px;
+    background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+    border-radius: 50%;
+    margin: 1rem auto;
+    border: 4px solid #475569;
+    display: flex; justify-content: center; align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.mirror-reflection {
+    font-size: 0.7rem;
+    color: #475569;
+    transform: scaleX(-1); /* Efecto espejo */
+    opacity: 0.5;
+}
+
+.mirror-frame::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 40%);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+/* Efecto visualización */
+body.visualizing::after {
+    content: 'VISUALIZANDO...';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+    color: var(--accent);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    animation: pulse 2s infinite;
+}

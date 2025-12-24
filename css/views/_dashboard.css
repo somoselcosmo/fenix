@@ -1,0 +1,97 @@
+/* Layout del Dashboard y Sidebar */
+.dashboard-container { 
+    display: flex; 
+    height: 100vh; 
+    width: 100vw; 
+    background-color: var(--bg-main); 
+    overflow: hidden; 
+}
+.sidebar { 
+    width: 250px; 
+    height: 100vh; /* Aseguramos altura total */
+    background-color: #1E293B; 
+    padding: 2rem; 
+    display: flex; 
+    flex-direction: column; /* Apila elementos verticalmente */
+    border-right: 1px solid rgba(255,255,255,0.05); 
+    flex-shrink: 0; /* Evita que el sidebar se aplaste */
+}
+.brand { 
+    font-size: 1.5rem; 
+    font-weight: 800; 
+    color: var(--accent); 
+    margin-bottom: 2rem; 
+    letter-spacing: 2px;
+    flex-shrink: 0; 
+}
+.user-level-display {
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+.workspace { flex: 1; padding: 2rem 4rem; overflow-y: auto; }
+.top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; }
+.welcome-msg h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.efficiency-clock { font-size: 1.5rem; font-weight: 700; font-family: monospace; padding: 0.5rem 1rem; background: #0f172a; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); box-shadow: 0 0 10px rgba(249, 115, 22, 0.2); }
+
+/* Sidebar Navigation Items */
+.roadmap-menu { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    
+    /* MAGIA FLEXBOX: */
+    flex: 1; /* Ocupa todo el espacio sobrante */
+    overflow-y: auto; /* Habilita scroll si se necesita */
+    min-height: 0; /* Truco vital para que el scroll funcione en flex items */
+    
+    padding-right: 10px; /* Espacio para que el scroll no tape el texto */
+    margin-bottom: 1rem; /* Separación con el botón de salir */
+}
+.roadmap-menu::-webkit-scrollbar {width: 5px;}
+.roadmap-menu::-webkit-scrollbar-track {background: transparent;}
+.roadmap-menu::-webkit-scrollbar-thumb {background: #334155; border-radius: 10px;}
+.roadmap-menu::-webkit-scrollbar-thumb:hover {background: var(--accent);}
+
+.module-item { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 1rem; 
+    background: rgba(255, 255, 255, 0.03); 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    border: 1px solid transparent; 
+    position: relative; 
+    overflow: hidden; 
+    opacity: 0.7; 
+    flex-shrink: 0; /* Evita que los items se aplasten */
+}
+.module-item:hover { opacity: 1; background: rgba(255, 255, 255, 0.05); }
+.module-item.locked { opacity: 0.5; cursor: not-allowed; background: transparent; pointer-events: none; }
+.module-item.active { background: linear-gradient(90deg, rgba(249, 115, 22, 0.1), transparent); border-color: rgba(249, 115, 22, 0.3); border-left: 3px solid var(--accent); opacity: 1; }
+.module-status { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); opacity: 0; transition: 0.3s; }
+.module-item.active .module-status { opacity: 1; }
+.module-number { font-size: 0.8rem; font-weight: 800; color: var(--text-secondary); margin-right: 10px; }
+.module-title { font-weight: 600; font-size: 0.95rem; }
+.btn-logout { 
+    background: none; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    color: var(--text-secondary); 
+    padding: 0.8rem; 
+    cursor: pointer; 
+    border-radius: 6px; 
+    transition: 0.3s; 
+    flex-shrink: 0; /* No permitimos que se encoja */
+    margin-top: auto; /* Asegura que se pegue al fondo si sobra espacio */
+}
+
+.btn-logout:hover { 
+    border-color: #ef4444; 
+    color: #ef4444; 
+}
+
+/* Chapter Headers Common */
+.chapter-hero { margin-bottom: 3rem; }
+.chapter-tag { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; font-weight: 800; margin-bottom: 1rem; display: block; }
+.hero-text { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 2rem 0; }

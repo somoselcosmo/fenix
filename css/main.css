@@ -1,0 +1,45 @@
+/* FÉNIX DIGITAL - MASTER CSS */
+
+/* 1. BASE */
+@import url('./base/_variables.css');
+@import url('./base/_reset.css');
+
+/* 2. COMPONENTS */
+@import url('./components/_buttons.css');
+@import url('./components/_forms.css');
+@import url('./components/_loaders.css');
+@import url('./components/_modals.css');
+
+/* 3. VIEWS */
+@import url('./views/_auth.css');
+@import url('./views/_dashboard.css');
+
+/* 4. CHAPTERS */
+@import url('./views/chapters/_chapter1.css');
+@import url('./views/chapters/_chapter2.css');
+@import url('./views/chapters/_chapter3.css');
+@import url('./views/chapters/_chapter4.css');
+@import url('./views/chapters/_chapter5.css');
+@import url('./views/chapters/_chapter6.css');
+@import url('./views/chapters/_chapter7.css');
+@import url('./views/chapters/_chapter8.css');
+@import url('./views/chapters/_chapter9.css');
+@import url('./views/chapters/_chapter10.css');
+@import url('./views/chapters/_chapter11.css');
+@import url('./views/chapters/_chapter12.css');
+@import url('./views/chapters/_chapter13.css');
+@import url('./views/chapters/_chapter14.css');
+@import url('./views/chapters/_chapter15.css');
+@import url('./views/chapters/_chapter16.css');
+@import url('./views/chapters/_chapter17.css');
+@import url('./views/chapters/_chapter18.css');
+@import url('./views/chapters/_chapter19.css');
+@import url('./views/chapters/_chapter20.css');
+@import url('./views/chapters/_chapter21.css');
+@import url('./views/chapters/_chapter22.css');
+@import url('./views/chapters/_chapter23.css');
+@import url('./views/chapters/_chapter24.css');
+@import url('./views/chapters/_chapter25.css');
+@import url('./views/chapters/_chapter26.css');
+@import url('./views/chapters/_chapter27.css');
+

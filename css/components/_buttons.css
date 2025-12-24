@@ -1,0 +1,42 @@
+/* Botones del Sistema */
+.btn-primary {
+    background-color: var(--accent); color: white; border: none;
+    padding: 1.2rem 2.5rem; font-size: 1rem; font-weight: 700;
+    border-radius: 4px; cursor: pointer; transition: 0.3s;
+}
+.btn-primary:hover { background-color: #EA580C; transform: scale(1.02); }
+.btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+.btn-link {
+    background: none; border: none; color: var(--text-primary);
+    cursor: pointer; font-weight: 400; font-size: 0.9rem;
+    opacity: 0.8; transition: opacity 0.3s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.btn-link:hover { opacity: 1; }
+
+.btn-google {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    width: 100%; padding: 0.8rem; background-color: white; color: #1E293B;
+    border: none; border-radius: 6px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-google:hover { background-color: #F1F5F9; transform: translateY(-1px); }
+.google-icon { width: 20px; height: 20px; }
+
+.btn-action {
+    width: 100%; background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2); color: white;
+    padding: 0.8rem; border-radius: 6px; cursor: pointer; transition: 0.2s;
+}
+.btn-action:hover { background: var(--accent); border-color: var(--accent); }
+
+/* Magnet Button */
+.btn-magnet {
+    width: 100%; padding: 1rem; background: linear-gradient(45deg, #1e293b, #334155);
+    border: 1px solid var(--text-secondary); color: white; font-weight: bold;
+    letter-spacing: 4px; border-radius: 8px; cursor: grab;
+}
+.btn-magnet:active { cursor: grabbing; transform: scale(0.95); border-color: var(--accent); color: var(--accent); }
+.pulsing { animation: pulse-magnet 0.5s infinite alternate; }
+@keyframes pulse-magnet { from { transform: scale(1); } to { transform: scale(1.05); } }
